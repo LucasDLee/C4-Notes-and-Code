@@ -1,0 +1,52 @@
+html {
+	font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+}
+
+header, footer {
+	background-color: palevioletred;
+	text-align: center;
+	padding: 1em;
+	/** Padding adds some space between the border of the HTML element and other elements inside that HTML elements **/
+}
+
+hr {
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+}
+
+main {
+	background-color: aliceblue;
+	padding: 1em;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: auto auto;
+	text-align: center;
+}
+
+.flex {
+	display: flex;
+	flex-direction: row;
+	gap: 2em;
+	justify-content: center;
+	padding: 1.25em;
+}
+
+main h2 {
+	text-align: center;
+}
+
+button {
+	font-weight: bold;
+	padding: 1em;
+}
+
+body {
+	margin: 0;
+}
+
+p, button {
+	text-align: center;
+}
