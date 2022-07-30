@@ -1,0 +1,27 @@
+<!DOCTYPE html> <!-- We are making a document with the type of HTML. This must also be at the top of every HTML document -->
+
+<html lang="en-US">
+	<head>
+		<title>Instructions</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="instructions.css" />
+		<script src="instructions.js"></script>
+	</head>
+	<body>
+		<header>
+				<h1>Activity Instructions</h1>
+				<a href="../index.html">Home</a>
+		</header>
+		<main>
+			<h2>Using CSS to Style a Ordered List</h2>
+			<p>Using CSS, we want to be able to add stylings to our HTML items to make our website look nice. In this activity, I want you to add stylings to all ordered lists (ol):</p>
+			<ul>
+				<li>Change all of the list items in an ordered list to "orange"</li>
+				<li>Add a border with a width of "1px" with a style of "dashed" to the entire ordered list
+</li>
+				<li>Change the numbers to "circle" using list-style-type
+</li>
+			</ul>
+			</main>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Latin&display=swap');
+html {
+    font-family: "Anek", sans-serif;
+}
+
+a {
+    color: darkred;
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+button:disabled {
+    color: black;
+}
+
+body {
+    margin: 0;
+}
+
+body>*>* {
+    margin: 0;
+}
+
+footer, header {
+    background-color: lightcoral;
+}
+
+main {
+    background-color: teal;
+}
+
+main>*, footer>*, header>* {
+    display: block;
+    justify-content: center;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    text-align: center;
+}
+
+main .board button {
+    border: 5px solid black;
+    background-color: white;
+    display: block;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 2.5em;
+}
+
+main .board button:hover {
+    cursor: pointer;
+}
+
+main .board {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 10em));
+    grid-template-rows: repeat(3, minmax(0, 10em));
+}
+
+p {
+    font-size: 1.25em;
+}
+
+.player {
+    font-weight: bold;
+}
+
+#reset {
+    border: 1px solid black;
+    font-weight: bold;
+    margin: auto;
+    padding: 1em;
+}
+
+#reset:hover {
+    cursor: pointer;
+}

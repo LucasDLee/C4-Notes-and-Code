@@ -1,32 +1,36 @@
 html {
-	font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 header, footer {
 	background-color: palevioletred;
 	text-align: center;
 	padding: 1em;
-	/** Padding adds some space between the border of the HTML element and other elements inside that HTML elements **/
 }
 
 hr {
 	border-style: solid;
-	border-width: 2px;
+	border-width: 1px;
 	border-color: black;
 }
 
 main {
+	align-items: center;
 	background-color: aliceblue;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	padding: 1em;
 }
 
-.grid {
+main .grid {
+	text-align: center;
 	display: grid;
 	grid-template-columns: auto auto;
-	text-align: center;
+	gap: 1em;
 }
 
-.flex {
+main .flex {
 	display: flex;
 	flex-direction: row;
 	gap: 2em;
@@ -34,19 +38,16 @@ main {
 	padding: 1.25em;
 }
 
-main h2 {
+main h2, main p {
 	text-align: center;
 }
 
 button {
 	font-weight: bold;
-	padding: 1em;
+	padding: 1em;	
+	width: fit-content;
 }
 
 body {
 	margin: 0;
-}
-
-p, button {
-	text-align: center;
 }

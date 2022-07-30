@@ -1,3 +1,0 @@
-- Reset button
-- End the game when the player/computer has won a certain amount of games
-- Two player layout

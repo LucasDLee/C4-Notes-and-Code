@@ -1,0 +1,58 @@
+p {
+	background-color: red;
+	text-align: center;
+}
+
+table, td {
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+}
+
+ul {
+	list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+}
+
+ul li {
+	font-weight: bold;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+    border-width: 5px;
+    border-style: solid;
+    border-color: red;
+    display: block;
+    margin: auto;
+}
+
+ol {
+    list-style-type: circle;
+    border-width: 1px;
+    border-style: dashed;
+}
+
+ol li {
+    color: orange;
+}
+
+body {
+    /* display: flex;
+    flex-direction: column; */
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+}
+
+.workplace {
+    color: green;
+}
+
+#my-name {
+    color: red;
+}
