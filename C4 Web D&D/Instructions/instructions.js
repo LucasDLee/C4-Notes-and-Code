@@ -92,6 +92,10 @@ function checkIfNumber(num) {
 }
 
 // Event listeners activity
+
+// <h1 id="title">My Title</h1>
+// <button onclick="findTitle()">Click me</button>
+
 function findTitle() {
 	let getTitle = document.getElementById("title")
 	let yourTitle = prompt("What is your title?")

@@ -5,19 +5,23 @@
         <meta charset="UTF-8">
         <title>Stopwatch</title>
         <link rel="stylesheet" href="style.css">
-        <script src="script.js" defer></script>
+        <script src="script.js" async></script>
     </head>
     <body>
         <header>
             <h1>Stopwatch</h1>
         </header>
         <main>
-            <button id="start">Start</button>
-            <button id="pause">Pause</button>
-            <button id="stop">Stop</button>
+            <p id="time">00:00:00</p>
+            <div class="controls">
+                <button id="start">Start</button>
+                <button id="reset">Reset</button>
+                <button id="stop">Stop</button>    
+            </div>
+            
         </main>
         <footer>
-            <p>@copy; Website</p>
+            <p>&copy; Website</p>
         </footer>
     </body>
 </html>

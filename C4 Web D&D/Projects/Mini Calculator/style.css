@@ -1,0 +1,26 @@
+body {
+    align-items: center;
+    background-color: lavenderblush;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    min-height: 100vh;
+}
+
+#math button {
+    background-color: skyblue;
+    border-style: none;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 1em;
+    padding: 2em;
+}
+
+#math button:hover {
+    cursor: pointer;
+}
+
+p {
+    font-size: 1.25em;
+}

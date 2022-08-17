@@ -1,0 +1,46 @@
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    align-items: center;
+    background-color: lavender;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    min-height: 100vh;
+    row-gap: 0.5em;
+}
+
+h1 {
+    font-size: 5em;
+}
+
+main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#time {
+    font-size: 2.5em;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1em;
+}
+
+.controls button {
+    border: none;
+    border-radius: 10px;
+    background-color: darkorange;
+    font-size: 1em;
+    padding: 1em;
+}
+
+.controls button:hover {
+    cursor: pointer;
+}
