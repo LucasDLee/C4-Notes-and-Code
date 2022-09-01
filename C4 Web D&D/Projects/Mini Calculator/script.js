@@ -1,6 +1,9 @@
 let mathButtons = document.querySelectorAll("#math button")
 
+// Use a loop to connect to each button
 mathButtons.forEach(function(b) {
+
+    // Adding an event listener connects to each individual button
     b.addEventListener("click", function() {
         if(b.id == "add") {
             addNumbers()
