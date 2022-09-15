@@ -1,12 +1,15 @@
-console.log("bruh");
 
-//DATA TYPES
+// VARIABLES
 
 //'let' is the keyword to make a variable
 //'name' is the variable's name
 //'Lucas' is my data type associated with my variable name
-let name = "Lucas";
-console.log(name);
+let myName = "Lucas";
+console.log(myName);
+myName = "Lee" // changing our variable value
+console.log(myName)
+
+//DATA TYPES
 
 //Strings (words)
 //All strings have quotation marks
