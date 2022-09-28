@@ -37,7 +37,7 @@ console.log(age + age); //40
 
 console.log("age + age"); //prints a word
 
-//Using modulous (getting the remainder)
+//Using modulo (getting the remainder)
 console.log(5 % 3);
 console.log(5 / 3);
 

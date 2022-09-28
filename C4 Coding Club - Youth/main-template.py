@@ -1,4 +1,4 @@
-### Lecture 1 ###
+### Class 1 ###
 
 # What is Python? 
 # Python is an object-oriented programming language used Facebook, Google, Netflix, etc.
@@ -99,7 +99,7 @@ print(colours)
 
 
 
-### Lecture 2 ###
+### Class 2 ###
 
 # Combining two lists
 years = [2000, 2001, 2002]
@@ -227,7 +227,7 @@ else:
 
 
 
-### Lecture 3 ###
+### Class 3 ###
 
 # and/or in if-statements
 
@@ -245,7 +245,7 @@ if a == 2 or b == 3:
 # There are 2 types of loops: for and while loops
 
 # while-loops
-# A while-loop runs "while" a condition if true
+# A while-loop runs "while" a condition is true
 # 1) A starting variable (usually a number)
 # 2) "while" keyword
 # 3) Ending condition
@@ -282,7 +282,7 @@ while i < 5:
     print(i)
     i += 1
 else:
-    print("Stopped loop")
+    print("Finished loop")
 
 # for-loops
 # A for-loop runs through a sequence of items
@@ -324,6 +324,10 @@ i = 0
 while i < len(cars):
     print(cars[i])
     i = i + 1
+
+
+
+# Class 4 #
 
 # Functions #
 
@@ -391,7 +395,92 @@ print(divide(3, 4))
 divideFunction = divide(5, 2)
 print(divideFunction)
 
+# Arbritrary Arugments in Functions
 
+# Arbritrary argument (*): Used if you don't know how many arguments you want in your function
 
-### Lecture 4 ###
+def my_students(*students):
+    print("I teach " + students[0] + ", " + students[1] + ", and " + students[2])
 
+my_students("Abe", "Bob", "Carrey")
+my_students("Abe", "Bob", "Carrey", "Deanna") # notice how "Deanna" isn't used here
+# my_students("Abe", "Bob") # notice how we get an error because we expect 3 students to print out but only 2 are present
+
+# Classes #
+
+# Python is what we call an Object-Oriented language. This means we get items like a person or a building, 
+# get their main properties (hair colour, height, weight), and objectify them
+
+# To make a class, we need the following:
+# 1) "class" keyword
+# 2) Class name (always start with a capital letter)
+
+class Person:
+    eyeColour = "Brown"
+    hairColour = "Black"
+    height = 180
+    isEmployed = True
+
+# Classes can be reused like functions and assigned to variables
+# A new class can be made by writing the class name followed by round brackets
+# e.g. ClassName()
+
+p1 = Person()
+print(p1)
+print(p1.eyeColour)
+print(p1.height)
+print(p1.isEmployed)
+
+# However, every Person is different. As such, when we make a class, we may want to "initialize" it
+# When we make a new Person, we can input certain properties to create (or initialize) the class
+
+class Person2:
+    def __init__(self, eC, hC, h, isEmp):
+        self.eyeColour = eC
+        self.hairColour = hC
+        self.height = h
+        self.isEmployed = isEmp
+# "self" refers to the Person2's template and how we can put things in that template to get unique Person2's
+
+p2 = Person2("Blue", "Blonde", 200, True)
+print(p2)
+print(p2.eyeColour)
+print(p2.height)
+print(p2.isEmployed)
+
+# Notice how when we print p1 or p2 by itself, we get a weird message declaring the class name and a bunch of letters and numbers
+# That is the class representation as a string
+# Obviously, it doesn't look readable but using the __str__() function, we can format it better
+
+class Person3:
+    def __init__(self, eC, hC, h, isEmp):
+        self.eyeColour = eC
+        self.hairColour = hC
+        self.height = h
+        self.isEmployed = isEmp
+
+    def __str__(self):
+        return ("Eye colour: " + self.eyeColour + ", hair colour: " + self.hairColour + ", height: " + str(self.height))
+
+p3 = Person3("Blue", "Blonde", 200, True)
+print(p3)
+
+### ACTIVITY: ###
+
+# Build a new class based on your school:
+# 1) Name your class School. This class will have both the __init__() and __str__() functions
+# 2) Your class should have the variables of numberOfClassrooms, teachers, and students which are all numbers
+# 3) In the __str__() function, it should say "We have " + numberOfClassrooms + " classrooms, " + teachers + " teachers, and " + students + " students"
+    # 3.1) REMEMBER TO CONVERT INTS TO STRINGS by doing str(345) => "345"
+# 4) Make a new object of this newly built class with whatever numbers you want and print it out
+
+class School:
+    def __init__(self, nOfC, t, s):
+        self.numberOfClassrooms = nOfC
+        self.teachers = t
+        self.students = s
+    
+    def __str__(self):
+        return ("We have " + str(self.numberOfClassrooms) + " classrooms, " + str(self.teachers) + " teachers, and " + str(self.students) + " students")
+
+print(School(100, 6, 2343))
