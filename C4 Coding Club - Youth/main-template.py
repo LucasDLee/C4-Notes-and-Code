@@ -5,9 +5,6 @@
 
 # Use the # to make a comment. Comments are notes in our code to remember what we wrote
 
-from cmath import sqrt
-
-
 print("Hello, World!") # notice it say Hello, world! in the black box called the console
 
 # Data Types
@@ -448,6 +445,12 @@ print(p2.eyeColour)
 print(p2.height)
 print(p2.isEmployed)
 
+
+
+# Class 5 #
+
+# Classes continued #
+
 # Notice how when we print p1 or p2 by itself, we get a weird message declaring the class name and a bunch of letters and numbers
 # That is the class representation as a string
 # Obviously, it doesn't look readable but using the __str__() function, we can format it better
@@ -465,22 +468,101 @@ class Person3:
 p3 = Person3("Blue", "Blonde", 200, True)
 print(p3)
 
+# To delete a class, write "del"
+del p3
+# print(p3) gives an error
+
+# If we want to make a class with nothing in it, we can use "pass"
+
+class Person4:
+    pass
+
 ### ACTIVITY: ###
 
 # Build a new class based on your school:
 # 1) Name your class School. This class will have both the __init__() and __str__() functions
-# 2) Your class should have the variables of numberOfClassrooms, teachers, and students which are all numbers
-# 3) In the __str__() function, it should say "We have " + numberOfClassrooms + " classrooms, " + teachers + " teachers, and " + students + " students"
+# 2) Your class should have the variables of schoolName as a string (word) and numberOfClassrooms, teachers, and students are all numbers
+# 3) In the __str__() function, it should say schoolName + " has " + numberOfClassrooms + " classrooms, " + teachers + " teachers, and " + students + " students"
     # 3.1) REMEMBER TO CONVERT INTS TO STRINGS by doing str(345) => "345"
-# 4) Make a new object of this newly built class with whatever numbers you want and print it out
+# 4) Make a new object of this newly built class with whatever values you want and print it out
 
 class School:
-    def __init__(self, nOfC, t, s):
+    def __init__(self, name, nOfC, t, s):
+        self.schoolName = name
         self.numberOfClassrooms = nOfC
         self.teachers = t
         self.students = s
     
     def __str__(self):
-        return ("We have " + str(self.numberOfClassrooms) + " classrooms, " + str(self.teachers) + " teachers, and " + str(self.students) + " students")
+        return (self.schoolName + " has " + str(self.numberOfClassrooms) + " classrooms, " + str(self.teachers) + " teachers, and " + str(self.students) + " students")
 
-print(School(100, 6, 2343))
+print(School("McMath", 100, 6, 2343))
+
+# Inheritance: Classes continued #
+
+# It is when one class is a part of, or depends on, another class
+
+# 1) Parent class: Class being inherited from
+# 2) Child class: Part of another class (Child depends on Parent)
+
+class Person5:
+    def __init__(self, fname, lname):
+        self.firstName = fname
+        self.lastName = lname
+
+    def __str__(self):
+        return (self.firstName + " " + self.lastName)
+
+class Student(Person5): # Student depends on Person5
+    def __init__(self, fname, lname, gr, studNum):
+        Person5.__init__(self, fname, lname)
+        # super().__init__(self, eC, hC, h, isEmp) does the same thing as above
+        self.grade = gr
+        self.studentNumber = studNum
+
+s1 = Student("Joe", "Obama", 3, 123)
+print(s1) # Notice how it prints the full name. That's because its take the __str__ function from its parent's class
+
+class Student2(Person5):
+    def __init__(self, fname, lname, gr, studNum):
+        Person5.__init__(self, fname, lname)
+        # super().__init__(self, eC, hC, h, isEmp) does the same thing as above
+        self.grade = gr
+        self.studentNumber = studNum
+
+    # We can either explicitly tell our code to take the __str__ function from the Parent class
+    # or we can make our own
+    def __str__(self):
+        # return super().__str__()
+        return (super().__str__() + " is in grade " + str(self.grade) + " with student #" + str(self.studentNumber))
+        # IF we want something from our parent's class, just write self.variableName
+
+s2 = Student2("Joe", "Obama", 3, 123)
+print(s2)
+
+### ACTIVITY: ###
+
+# Using the School class you made in the previous activity, make a Classroom that inherits from School:
+# 1) The Classroom class should have both __init__() and __str__() functions
+# 2) Every classroom should have the variables of capacity (number), roomNumber (number), floorNumber (number), and isOccupied (boolean)
+# 3) The __str__() function should return "Classroom #" + self.roomNumber + " is on floor " + self.floorNumber + " at " + self.schoolName
+# 4) Make a new object of Classroom and print it out
+# 5) OPTIONAL: Make a function called getCapacity(self). getCapacity(self) prints the classroom's capacity to the console.
+
+class Classroom(School):
+    def __init__(self, name, nOfC, t, s, capacity, rN, fN, iO):
+        super().__init__(name, nOfC, t, s)
+        self.capacity = capacity
+        self.roomNumber = rN
+        self.floorNumber = fN
+        self.isOccupied = iO
+
+    def __str__(self):
+        return ("Classroom #" + str(self.roomNumber) + " is on floor " + str(self.floorNumber) + " at " + self.schoolName)
+
+    def getCapacity(self):
+        print(self.capacity)
+
+c1 = Classroom("McMath", 100, 6, 2343, 20, 1, 2, True)
+print(c1)
+c1.getCapacity()
