@@ -18,7 +18,7 @@ main {
 	align-items: center;
 	background-color: aliceblue;
 	display: flex;
-	flex-direction: column;
+	/* flex-direction: column; */
 	justify-content: center;
 	padding: 1em;
 }

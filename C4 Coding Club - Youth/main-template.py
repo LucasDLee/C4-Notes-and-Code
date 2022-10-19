@@ -547,7 +547,6 @@ print(s2)
 # 2) Every classroom should have the variables of capacity (number), roomNumber (number), floorNumber (number), and isOccupied (boolean)
 # 3) The __str__() function should return "Classroom #" + self.roomNumber + " is on floor " + self.floorNumber + " at " + self.schoolName
 # 4) Make a new object of Classroom and print it out
-# 5) OPTIONAL: Make a function called getCapacity(self). getCapacity(self) prints the classroom's capacity to the console.
 
 class Classroom(School):
     def __init__(self, name, nOfC, t, s, capacity, rN, fN, iO):
@@ -560,9 +559,6 @@ class Classroom(School):
     def __str__(self):
         return ("Classroom #" + str(self.roomNumber) + " is on floor " + str(self.floorNumber) + " at " + self.schoolName)
 
-    def getCapacity(self):
-        print(self.capacity)
 
 c1 = Classroom("McMath", 100, 6, 2343, 20, 1, 2, True)
 print(c1)
-c1.getCapacity()
