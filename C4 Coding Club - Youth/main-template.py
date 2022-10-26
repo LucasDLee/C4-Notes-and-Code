@@ -37,10 +37,13 @@ print("September, " + "2022")
 # All variables have a name and a value
 # example: variableName = value
 
-myName = "Lucas"
-print(myName) # printing the variable means I print the value associated with it
-myName = "Lee" # change the value of our variable
-print(myName)
+my_name = "Lucas"
+print(my_name) # printing the variable means I print the value associated with it
+my_name = "Lee" # change the value of our variable
+print(my_name)
+
+# Pascal Case is a type of variable naming style. All spaces are replaced with underlines and all words are in lowercase
+# e.g. super_string, pascal_case
 
 ### ACTIVITY: 
 # Make a variable called school and set the value to whatever school you go to
@@ -96,12 +99,13 @@ print(colours)
 
 
 
+
 ### Class 2 ###
 
 # Combining two lists
 years = [2000, 2001, 2002]
-yearsAndColours = years + colours
-print(yearsAndColours)
+years_and_colours = years + colours
+print(years_and_colours)
 
 # Dictionaries #
 
@@ -221,6 +225,7 @@ elif dice >= 20:
     print("You win")
 else:
     print("Help")
+
 
 
 

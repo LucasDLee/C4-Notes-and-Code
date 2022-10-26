@@ -1,21 +1,21 @@
-let mathButtons = document.querySelectorAll("#math button")
+// let mathButtons = document.querySelectorAll("#math button")
 
-// Use a loop to connect to each button
-mathButtons.forEach(function(b) {
+// // Use a loop to connect to each button
+// mathButtons.forEach(function(b) {
 
-    // Adding an event listener connects to each individual button
-    b.addEventListener("click", function() {
-        if(b.id == "add") {
-            addNumbers()
-        } else if(b.id == "subtract") {
-            subtractNumbers()
-        } else if(b.id == "multiply") {
-            multiplyNumbers()
-        } else if(b.id == "divide") {
-            divideNumbers()
-        }
-    })
-})
+//     // Adding an event listener connects to each individual button
+//     b.addEventListener("click", function() {
+//         if(b.id == "add") {
+//             addNumbers()
+//         } else if(b.id == "subtract") {
+//             subtractNumbers()
+//         } else if(b.id == "multiply") {
+//             multiplyNumbers()
+//         } else if(b.id == "divide") {
+//             divideNumbers()
+//         }
+//     })
+// })
 
 function addNumbers() {
     let num1 = prompt("What is your first number?")
