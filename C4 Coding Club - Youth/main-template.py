@@ -80,11 +80,16 @@ print(5 > 0 and 2 < 0)
 print(5 > 0 or 2 < 0)
 
 ### ACTIVITY:
-# Make a variable called age and assign it your current age
-# Check if your age is greater than 16 and greater than or equal to 19 and print out your result
+# 1. Make a variable called age and assign it your current age
+# 2. Use print to check if your age is greater than 16 and greater than or equal to 19 and print out your result
 
 age = 20
 print(age > 16 and age >= 19)
+
+
+
+
+### Class 2 ###
 
 # Lists
 
@@ -96,11 +101,6 @@ print(colours[0]) # getting the 1st item of my list
 print(colours[-1]) # getting the last item of my list
 colours[0] = "orange"
 print(colours)
-
-
-
-
-### Class 2 ###
 
 # Combining two lists
 years = [2000, 2001, 2002]

@@ -31,6 +31,15 @@ img {
     margin: auto;
 }
 
+/* 
+Apply the following stylings to the ordered list tag:
+    - A list-style-type of circle
+    - Border width of 1px
+    - Border style of dashed 
+
+Apply the following stylings to list items in the ordered list:
+    - Text colour of orange
+*/
 ol {
     list-style-type: circle;
     border-width: 1px;

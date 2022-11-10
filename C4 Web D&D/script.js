@@ -9,6 +9,9 @@ console.log(myName);
 myName = "Lee" // changing our variable value
 console.log(myName)
 
+// camelCase is a type of variable naming style. The first word is lowercase and the first letter in the next words are uppercase
+// e.g. superString, theSkyIsBlue
+
 //DATA TYPES
 
 //Strings (words)
@@ -22,7 +25,7 @@ console.log(age);
 let old = age + 10;
 console.log(old);
 
-//Booleans (true or false variables)
+//Booleans (yes/no questions)
 let isOpen = false;
 console.log(isOpen);
 isOpen = true;
