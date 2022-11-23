@@ -1,3 +1,4 @@
+// Class 3
 
 // VARIABLES
 
@@ -40,6 +41,12 @@ console.log(age + age); //40
 
 console.log("age + age"); //prints a word
 
+// Basic math
+console.log(5 + 3)
+console.log(5 - 3)
+console.log(5 * 3)
+console.log(5 / 3)
+
 //Using modulo (getting the remainder)
 console.log(5 % 3);
 console.log(5 / 3);
@@ -64,11 +71,15 @@ console.log(true || false);
 console.log(5 > 0 && 2 < 0);
 console.log(5 > 0 || 2 < 0);
 
-//If-statements
-//3 parts of an if-statement:
-//"if" keyword
-//parameters found in ( )
-//curly brackets where our code will be in { }
+
+
+// Class 4
+
+// If-statements
+// 3 parts of an if-statement:
+// 1) "if" keyword
+// 2) parameters found in ( )
+// 3) curly brackets where our code will be in { }
 let number = -3;
 
 if(number > 0) {
@@ -87,7 +98,11 @@ if(number > 0) {
     console.log("idk");
 }
 
-//Switch statements
+// else if: Always after an if- or else if- statement, optional
+// else: Always after an if- or else if- statement, found at the end, optional
+
+// Switch statements
+// Similar to if-statements but we check multiple "cases"
 let day = "Monday";
 
 switch(day) {
@@ -98,45 +113,60 @@ switch(day) {
 		console.log("Day is gone");
 }
 
-//Loops
-//Definition: A loop is a coding mechanism in which you can repeat a task multiple times without having to rewrite it
+// Loops
+// A loop is a coding mechanism in which you can repeat a task multiple times without having to rewrite it
 
-//For-loop
-//1. "for" keyword
-//2. Starting condition (let i = 0)
-//3. Ending condition (i < 10)
-//4. Increment value/condition (i = i + 1)
-//5. Curly brackets to hold our specific code ( { } )
+// for-loop
+// 1. "for" keyword
+// 2. Starting condition (let i = 0)
+// 3. Ending condition (i < 10)
+// 4. Increment value/condition (i = i + 1)
+// 5. Curly brackets to hold our specific code ( { } )
 for(let i = 0; i < 10; i = i + 1) {
 	console.log("This is a for-loop");
 }
 
-//While loop
+for(let i = 0; i < 10; i += 1) {
+	console.log("This is loop #" + i)
+	for(let j = 0; j < 10; j += 1) {
+		console.log(j)
+	}
+}
+
+// while loop
+// Needs the same things as a for-loop but in a different order
 let j = 0;
 while(j < 10) {
 	console.log("This is loop number " + j);
 	j++;
 }
 
-//do-while loop
+// do-while loop
+// Needs the same things as a for- and while-loop but in a different order
 let m = 0;
 do {
 	console.log(m)
 	m += 1;
 } while(m < 5)
 
-//Functions
-//A function is a piece of our code we can reuse that'll do a certain thing such as using loops or printing our name to the console
 
-//3 things in a function:
-//"function" keyword
-//function name: always comes after the "function" keyword
-//parameters: variables that we need to make our function work
+
+// Class 5
+
+// Functions
+// A function is a piece of our code we can reuse that'll do a certain thing such as using loops or printing our name to the console
+
+// 3 things in a function:
+// 1) "function" keyword
+// 2) function name: always comes after the "function" keyword
+// 3) parameters: variables that we need to make our function work (optional)
+// e.g. function functionName() { }
 function add(x, y) {
 	console.log(x + y)
 }
 
-//Calling our function
+// Calling our function allows our function to work
+// Functions work only when we type their name and parameters
 add(8, 6)
 add(30, 1)
 
@@ -165,15 +195,20 @@ for(let i = 0; i < cars.length; i++) {
 	console.log(cars[i])
 }
 
-//Math
+// More Math
 console.log(Math.PI)
 console.log(Math.round(0.5))
 console.log(Math.ceil(0.1)) //always rounds up when using Math.ceil
 console.log(Math.floor(1.9)) //always rounds DOWN when using Math.floor
-console.log(Math.pow(2, 8)) //first parameter: number we're multiplying
-//second parameter: our power number
+console.log(Math.pow(2, 8)) 
+//first parameter: number we're multiplying
+//second parameter: our power
 console.log(Math.sqrt(9))
 console.log(Math.random()) //0 <= Math.random() < 1
+
+
+
+// Class 6
 
 //Document Object Model
 //A way to connect our HTML file (website) to our JavaScript

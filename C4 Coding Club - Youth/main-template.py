@@ -45,7 +45,7 @@ print(my_name)
 # Pascal Case is a type of variable naming style. All spaces are replaced with underlines and all words are in lowercase
 # e.g. super_string, pascal_case
 
-### ACTIVITY: 
+### ACTIVITY: ###
 # Make a variable called school and set the value to whatever school you go to
 # Once you do that, print the variable
 school = "SFU"
@@ -79,7 +79,7 @@ print(True or False)
 print(5 > 0 and 2 < 0)
 print(5 > 0 or 2 < 0)
 
-### ACTIVITY:
+### ACTIVITY: ###
 # 1. Make a variable called age and assign it your current age
 # 2. Use print to check if your age is greater than 16 and greater than or equal to 19 and print out your result
 
@@ -342,13 +342,13 @@ while i < len(cars):
 # 3) Round () brackets
 # e.g. def myFunction()
 
-def sayHi():
+def say_hi():
     print("Hi!")
 
 # To make the function work, we need to write the function name and brackets
 # This is called "calling a function"
-sayHi()
-sayHi()
+say_hi()
+say_hi()
 
 # Sometimes, we have a function that takes argument(s)
 
@@ -370,16 +370,21 @@ add(7, 20)
 
 ### ACTIVITY: ###
 
-# Make a function called daysGoneBy. This function will take 1 number as an argument. You may call your argument whatever you like
-# Within the function, make a for-loop. This for-loop's ending condition will be your function's argument (use range() for this)
-# Within the for-loop, print "It is day #" + str(your argument)
-# Test the function by calling it and see if it prints the number of days that corresponds to the number in your called function
+# This activity involves "functions" and "loops"
+# 1) Make a function called "count_sheep". This function will take 1 argument called "number_of_sheep"
+# 2) In your "count_sheep" function, make a for-loop that will run depending on how many sheep you input in "number_of_sheep"
+#   2.1) Use "range" for your ending condition
+			# 2.1.1) "range" goes through a sequence of numbers
+			# 2.1.2) e.g. range(6) gives us 0, 1, 2, 3, 4, 5
+#   2.2) e.g. if "number_of_sheep" = 3, your loop will run 3 times
+#   2.3) e.g. if "number_of_sheep" = 2342, your loop will run 2342 times
+# 3) In your for-loop, print to the console: "I have counted " + str(number_of_sheep) + " sheep"
+#   3.1) e.g. if "number_of_sheep = 3", you will see "I have counted 1 sheep", "I have counted 2 sheep", "I have counted 3 sheep"
 
-def daysGoneBy(days):
-    for x in range(days):
-        print("It is day #" + str(x))
+def count_sheep(number_of_sheep):
+    for x in range(number_of_sheep):
+        print("I have counted " + str(number_of_sheep) + " sheep")
 
-daysGoneBy(7)
 
 # Functions continued #
 
@@ -394,8 +399,8 @@ def divide(x, y):
 divide(3, 4) # notice how nothing is printed here
 print(divide(3, 4))
 
-divideFunction = divide(5, 2)
-print(divideFunction)
+get_divide_function_value = divide(5, 2)
+print(get_divide_function_value)
 
 # Arbritrary Arugments in Functions
 
@@ -418,10 +423,10 @@ my_students("Abe", "Bob", "Carrey", "Deanna") # notice how "Deanna" isn't used h
 # 2) Class name (always start with a capital letter)
 
 class Person:
-    eyeColour = "Brown"
-    hairColour = "Black"
+    eye_colour = "Brown"
+    hair_colour = "Black"
     height = 180
-    isEmployed = True
+    is_employed = True
 
 # Classes can be reused like functions and assigned to variables
 # A new class can be made by writing the class name followed by round brackets
@@ -429,26 +434,26 @@ class Person:
 
 p1 = Person()
 print(p1)
-print(p1.eyeColour)
+print(p1.eye_colour)
 print(p1.height)
-print(p1.isEmployed)
+print(p1.is_employed)
 
 # However, every Person is different. As such, when we make a class, we may want to "initialize" it
 # When we make a new Person, we can input certain properties to create (or initialize) the class
 
 class Person2:
     def __init__(self, eC, hC, h, isEmp):
-        self.eyeColour = eC
-        self.hairColour = hC
+        self.eye_colour = eC
+        self.hair_colour = hC
         self.height = h
-        self.isEmployed = isEmp
+        self.is_employed = isEmp
 # "self" refers to the Person2's template and how we can put things in that template to get unique Person2's
 
 p2 = Person2("Blue", "Blonde", 200, True)
 print(p2)
-print(p2.eyeColour)
+print(p2.eye_colour)
 print(p2.height)
-print(p2.isEmployed)
+print(p2.is_employed)
 
 
 
@@ -462,13 +467,13 @@ print(p2.isEmployed)
 
 class Person3:
     def __init__(self, eC, hC, h, isEmp):
-        self.eyeColour = eC
-        self.hairColour = hC
+        self.eye_colour = eC
+        self.hair_colour = hC
         self.height = h
-        self.isEmployed = isEmp
+        self.is_employed = isEmp
 
     def __str__(self):
-        return ("Eye colour: " + self.eyeColour + ", hair colour: " + self.hairColour + ", height: " + str(self.height))
+        return ("Eye colour: " + self.eye_colour + ", hair colour: " + self.hair_colour + ", height: " + str(self.height))
 
 p3 = Person3("Blue", "Blonde", 200, True)
 print(p3)

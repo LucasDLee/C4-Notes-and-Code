@@ -16,10 +16,10 @@ console.log(num1 * num2);
 
 num1 = 34
 
-console.log(num1 <= num2);
+console.log(num1 < num2);
 
 // JS 2
-let dice = 20;
+let dice = -1;
 
 if(dice % 2 == 0 && dice % 5 == 0) {
 	console.log("You have rolled a mulitple of 10");
