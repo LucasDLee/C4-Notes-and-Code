@@ -91,7 +91,7 @@ function checkIfNumber(num) {
 	return false
 }
 
-// Event listeners activity
+// JS 4
 
 // <h1 id="title">My Title</h1>
 // <button onclick="findTitle()">Click me</button>

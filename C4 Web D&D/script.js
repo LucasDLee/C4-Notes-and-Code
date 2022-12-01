@@ -210,26 +210,41 @@ console.log(Math.random()) //0 <= Math.random() < 1
 
 // Class 6
 
-//Document Object Model
-//A way to connect our HTML file (website) to our JavaScript
+// Document Object Model
+// A way to connect our HTML file (website) to our JavaScript
 function callDemoFunction() {
 	let getDemoId = document.getElementById("demo")
 	getDemoId.innerHTML = "We are using the Document Object Model to change this text with JavaScript!"
 }
 
-//Event listeners
-//Part of the DOM, they wait for a certain action on our website and react accordingly
+// Event Listeners
+// Instead of directly linking our function to a button, we can look for its HTML Id
 let testAlert = document.getElementById("event")
 console.log(testAlert.innerHTML)
+
+// Part of the DOM, they wait for a certain action on our website and react accordingly
 testAlert.addEventListener("click", function() {
 	alert("You used an event listener to call a pop up!")
 })
+
+let divideButton = document.getElementById("activateDivide")
+divideButton.addEventListener("click", divide)
 
 function divide() {
 	//Prompt: looks like an alert but the user can input something inside the prompt's text box
 	let x = prompt("What is your numerator?")
 	let y = prompt("What is your denominator?")
 	let result = x / y
-	let divideParagraphText = document.getElementById("divide")
-	divideParagraphText.innerHTML = "You have divided " + x + " and " + y + " to get " + result
+	let divideParagraphText = document.getElementById("dividedText")
+	divideParagraphText.innerHTML = x + " / " + y + " = " + result
 }
+
+// Query Selector
+// If we want to get a certain HTML element or class, we can use query selector
+// Gets the FIRST HTML element it finds
+
+let changeParagraphColour = document.querySelector('p')
+changeParagraphColour.style.color = 'azure'
+
+let changeHeading1BackgroundColour = document.querySelector('h1')
+changeHeading1BackgroundColour.style.backgroundColor = 'turquoise'

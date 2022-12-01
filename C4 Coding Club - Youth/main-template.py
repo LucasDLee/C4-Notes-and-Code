@@ -376,14 +376,14 @@ add(7, 20)
 #   2.1) Use "range" for your ending condition
 			# 2.1.1) "range" goes through a sequence of numbers
 			# 2.1.2) e.g. range(6) gives us 0, 1, 2, 3, 4, 5
-#   2.2) e.g. if "number_of_sheep" = 3, your loop will run 3 times
-#   2.3) e.g. if "number_of_sheep" = 2342, your loop will run 2342 times
+#   2.2) e.g. if number_of_sheep is 3, your loop will run 3 times
+#   2.3) e.g. if number_of_sheep is 2342, your loop will run 2342 times
 # 3) In your for-loop, print to the console: "I have counted " + str(number_of_sheep) + " sheep"
-#   3.1) e.g. if "number_of_sheep = 3", you will see "I have counted 1 sheep", "I have counted 2 sheep", "I have counted 3 sheep"
+#   3.1) e.g. if number_of_sheep is 3, you will see "I have counted 1 sheep", "I have counted 2 sheep", "I have counted 3 sheep"
 
 def count_sheep(number_of_sheep):
     for x in range(number_of_sheep):
-        print("I have counted " + str(number_of_sheep) + " sheep")
+        print("I have counted " + str(x) + " sheep")
 
 
 # Functions continued #
@@ -507,6 +507,7 @@ class School:
         return (self.schoolName + " has " + str(self.numberOfClassrooms) + " classrooms, " + str(self.teachers) + " teachers, and " + str(self.students) + " students")
 
 print(School("McMath", 100, 6, 2343))
+print(School("Burnett", 8, 435, 1))
 
 # Inheritance: Classes continued #
 
