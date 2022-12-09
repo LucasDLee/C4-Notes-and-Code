@@ -2,9 +2,9 @@
 
 // VARIABLES
 
-//'let' is the keyword to make a variable
-//'name' is the variable's name
-//'Lucas' is my data type associated with my variable name
+// 'let' is the keyword to make a variable
+// 'name' is the variable's name
+// 'Lucas' is my data type associated with my variable name
 let myName = "Lucas";
 console.log(myName);
 myName = "Lee" // changing our variable value
@@ -13,26 +13,26 @@ console.log(myName)
 // camelCase is a type of variable naming style. The first word is lowercase and the first letter in the next words are uppercase
 // e.g. superString, theSkyIsBlue
 
-//DATA TYPES
+// DATA TYPES
 
-//Strings (words)
-//All strings have quotation marks
+// Strings (words)
+// All strings have quotation marks
 let bookTitle = "The Hobbit";
 console.log(bookTitle);
 
-//Numbers
+// Numbers
 let age = 20;
 console.log(age);
 let old = age + 10;
 console.log(old);
 
-//Booleans (yes/no questions)
+// Booleans (yes/no questions)
 let isOpen = false;
 console.log(isOpen);
 isOpen = true;
 console.log(isOpen);
 
-//Connecting variables
+// Connecting variables
 console.log("Age: " + age);
 
 console.log("Community " + "Centre");
@@ -47,20 +47,20 @@ console.log(5 - 3)
 console.log(5 * 3)
 console.log(5 / 3)
 
-//Using modulo (getting the remainder)
+// Using modulo (getting the remainder)
 console.log(5 % 3);
 console.log(5 / 3);
 
-//Comparisons
+// Comparisons
 console.log(6 > 1);
 console.log(6 < 1);
 console.log(5 >= 5);
 console.log(5 <= 4);
 console.log(3 == 3);
 
-//Checking multiple conditions
-//&&: both conditions must be true for the operation to work
-//||: one of the conditions must be true for the operation to be true
+// Checking multiple conditions
+// &&: both conditions must be true for the operation to work
+// ||: one of the conditions must be true for the operation to be true
 
 //Booleans
 console.log(true && false);
@@ -177,7 +177,7 @@ printLocation()
 
 function multiply(x, y) {
 	return x * y
-	//return: instead of printing a value to the console, we can give out a new value by returning something
+	// return: instead of printing a value to the console, we can give out a new value by returning something
 }
 
 let multipliedNumber = multiply(4, 5)
@@ -190,7 +190,7 @@ console.log(cars[0])
 cars[0] = 'Ferrari';
 console.log(cars[0])
 
-//Printing all the items in my array
+// Printing all the items in my array
 for(let i = 0; i < cars.length; i++) {
 	console.log(cars[i])
 }
@@ -201,8 +201,8 @@ console.log(Math.round(0.5))
 console.log(Math.ceil(0.1)) //always rounds up when using Math.ceil
 console.log(Math.floor(1.9)) //always rounds DOWN when using Math.floor
 console.log(Math.pow(2, 8)) 
-//first parameter: number we're multiplying
-//second parameter: our power
+// first parameter: number we're multiplying
+// second parameter: our power
 console.log(Math.sqrt(9))
 console.log(Math.random()) //0 <= Math.random() < 1
 

@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+/* 
+Apply the following stylings to the ordered list tag:
+    - A list-style-type of circle
+    - Border width of 1px
+    - Border style of dashed 
 
-html {
-	font-family: "Open Sans", sans-serif; 
-}
-
-ul li, ol li {
-	padding: 0.5em;
-}
+Apply the following stylings to list items in the ordered list:
+    - Text colour of orange
+*/

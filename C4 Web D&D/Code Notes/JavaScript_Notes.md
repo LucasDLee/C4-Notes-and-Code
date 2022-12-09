@@ -284,6 +284,8 @@ Here's an example:
 
 ### Functions
 
+What is a function? A function is a piece of code we can pre-define so we can reuse it later.
+
 - A block of code that is used for a specific task
   - Need the following:
     - "function" keyword
@@ -340,6 +342,8 @@ Here's an example:
 ```
 
 #### Calling a Function
+
+When we want a function to run, we must "call" it. This means we need to write its name with the necessary parameters.
 
 - Type the function name with the parameters (if it has no parameters, just have the parenthesis)
   - E.g. functionName() or functionName(parameter)
