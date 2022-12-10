@@ -348,3 +348,66 @@ When we want a function to run, we must "call" it. This means we need to write i
 - Type the function name with the parameters (if it has no parameters, just have the parenthesis)
   - E.g. functionName() or functionName(parameter)
 - We can call a function to the console by assigning a variable to it. If the function has any console.log code, then that code will be printed out
+
+### Document Object Model (DOM)
+
+The Document Object Model (DOM) is a way to connect our JavaScript code to our HTML page. This is quite useful as it provides a medium for our users to interact with our website instead of having to search for and look at the console.
+
+One way to use the DOM is to make a button in HTML:
+
+```html
+  <button>This is a button</button>
+
+  <!-- I can connect my button to JavaScript using "onclick" -->
+  <!-- onclick: Looks for the function associated with it and runs the code -->
+
+  <button onclick="myFunction()">Button 1</button>
+  <p id="my-demo">Among Us</p>
+```
+
+Once we specify those IDs or onclicks, we can then go to JavaScript to write the proper code.
+
+```js
+  function myFunction() {
+    let getDemoId = document.getElementById("my-demo")
+    getDemoId.innerHTML = "We are using the Document Object Model to change this text with JavaScript!"
+  }
+```
+
+Some notes:
+
+- `document`: Refers to the HTML file that is connected to your JS file
+- `getElementById("id here")`: Looks for that specific ID
+- `innerHTML`: Changes the HTML that is displayed on your website.
+
+When someone clicks on **Button 1**, the text that says *Among Us* will change to *We are using the Document Object Model to change this text with JavaScript!*
+
+#### Event Listeners
+
+An event listener is a part of the DOM that **waits for an action** like a click, scroll, or keyboard button to be pressed and activates its code once that action has occured.
+
+Another way to connect a button to HTML is through its ID:
+
+```html
+  <button id="my-button">Button 2</button>
+```
+
+In some cases, this can be more secure as it doesn't explicitly display which code you want to run when the button is pressed.
+
+```js
+  let testAlert = document.getElementById("my-button")
+
+  // Part of the DOM, they wait for a certain action on our website and react accordingly
+  testAlert.addEventListener("click", function() {
+    alert("You used an event listener to call a pop up!")
+  })
+```
+
+Some notes:
+
+- `addEventListener(action, your-function)`: A part of the DOM that waits until something happens and then runs the code for it
+  - `action`: Anything your user does on the website (e.g. click, scroll, keyboard press, etc.)
+  - `your-function`: Any function you write that contains the code you want to run. A function with no name is called an "anonymous function"
+- `alert`: A pop up that displays a message of sorts
+
+When someone clicks on **Button 2**, a pop up with the message *You used an event listener to call a pop up!* appears at the top of your website.
