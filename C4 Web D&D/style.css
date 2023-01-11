@@ -1,5 +1,16 @@
 /* Class 2 */
 
+/* All comments in CSS are between these two symbols */
+
+/* Every CSS "styling" must first get the specific HTML tag we want and then apply a PROPERTY to it with a specific VALUE */
+
+/* Example
+    html-element {
+        property: value;
+        property2: value2;
+    }
+*/
+
 p {
 	background-color: red;
 	text-align: center;
@@ -52,6 +63,10 @@ ol li {
     color: orange;
 }
 
+
+/* Flexbox and Grids */
+/* Flex: 1D */
+/* Grid: 2D */
 body {
     /* display: flex;
     flex-direction: column; */

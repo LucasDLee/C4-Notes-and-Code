@@ -1,4 +1,5 @@
 ### Class 1 ###
+print("\nClass 1\n")
 
 # What is Python? 
 # Python is an object-oriented programming language used Facebook, Google, Netflix, etc.
@@ -7,11 +8,12 @@
 
 print("Hello, World!") # notice it say Hello, world! in the black box called the console
 
-# Data Types
+# Primitive Data Types #
 
 ## Strings (words)
 ## Anything with quotation marks " "
 
+print("\nData Types")
 print("My name")
 print("This is a string")
 
@@ -32,11 +34,12 @@ print("Community " + "Centre")
 print("September, " + "2022")
 # connecting strings and numbers gives an error
 
-# Variables (ways to store our strings/numbers/booleans)
+# Variables (ways to store our strings/numbers/booleans) #
 
 # All variables have a name and a value
 # example: variableName = value
 
+print("\nVariables")
 my_name = "Lucas"
 print(my_name) # printing the variable means I print the value associated with it
 my_name = "Lee" # change the value of our variable
@@ -46,18 +49,20 @@ print(my_name)
 # e.g. super_string, pascal_case
 
 ### ACTIVITY: ###
-# Make a variable called school and set the value to whatever school you go to
-# Once you do that, print the variable
+# 1) Make a variable called school and set the value to whatever school you go to
+# 2) Once you do that, print the variable
 school = "SFU"
 print(school)
 
-# Math
+# Math #
+print("\nMath")
 print(8 + 3)
 print(8 - 3)
 print(8 * 3)
 print(8 / 3)
 
-# Checking individual conditions
+# Checking individual conditions #
+print("\nComparisons")
 print(6 > 1)
 print(6 < 1)
 print(5 >= 5)
@@ -65,7 +70,7 @@ print(5 <= 4)
 print(3 == 3) # use == to check if 2 things are the same
 # notice how your console says True or False. That happens because we're checking if something is bigger/smaller than something else and if we do/don't, we get a yes/no or True/False
 
-# Checking multiple conditions
+# Checking multiple conditions #
 
 # and: both conditions must be true for the operation to work
 # or: one of the conditions must be true for the operation to be true
@@ -86,13 +91,9 @@ print(5 > 0 or 2 < 0)
 age = 20
 print(age > 16 and age >= 19)
 
+# Lists #
 
-
-
-### Class 2 ###
-
-# Lists
-
+print("\nLists")
 colours = ["blue", "red", "green"]
 print(colours)
 # In a list, you can change the values and also have duplicate values
@@ -107,12 +108,18 @@ years = [2000, 2001, 2002]
 years_and_colours = years + colours
 print(years_and_colours)
 
+
+
+
+### Class 2 ###
+print("\nClass 2\n")
+
 # Dictionaries #
 
 # A dictionary in Python holds what we call "key: value" pairs
 # This means we have a key, a topic or category, like colour, age, weight, height, etc.
 # Values are properties of a key: blue, 20, 50, 175
-
+print("\nDictionaries")
 person = {
     "name": "Lucas",
     "age": 20,
@@ -166,6 +173,7 @@ school.update({"name": "SFU"})
 print(school["name"])
 
 # If-statements #
+print("\nIf-statements")
 
 # An if-statement checks if something is True, and if it is, then it will run a specific set of code
 
@@ -206,12 +214,12 @@ else:
 
 ### ACTIVITY: ###
 
-# Make a variable called dice and assign it any positive number
-# If dice is smaller than 5, print "Not quite"
-# Else if dice is smaller than 10, print "Halfway there"
-# Else if dice is smaller than 20, print "Almost there"
-# Else if dice is greater than or equal to 20, print "You win"
-# Else print "Help"
+# 1) Make a variable called dice and assign it any positive number
+# 2) If dice is smaller than 5, print "Not quite"
+# 3) Else if dice is smaller than 10, print "Halfway there"
+# 4) Else if dice is smaller than 20, print "Almost there"
+# 5) Else if dice is greater than or equal to 20, print "You win"
+# 6) Else print "Help"
 
 dice = 11
 
@@ -230,6 +238,7 @@ else:
 
 
 ### Class 3 ###
+print("\nClass 3\n")
 
 # and/or in if-statements
 
@@ -253,7 +262,7 @@ if a == 2 or b == 3:
 # 3) Ending condition
 # 4) Code within the while loop
 # 5) Some way to change our starting variable
-
+print("\nWhile-Loops")
 i = 0
 while i < 10:
     print(i)
@@ -291,7 +300,7 @@ else:
 # 1) A starting variable (like a list)
 # 2) "for" and "in" keywords
 # 3) Code within the loop
-
+print("\nFor-Loops")
 cars = ["Ferrari", "Volvo", "Toyota", "Mercedes"]
 for x in cars:
     print(x)
@@ -330,6 +339,7 @@ while i < len(cars):
 
 
 # Class 4 #
+print("\nClass 4\n")
 
 # Functions #
 
@@ -341,7 +351,7 @@ while i < len(cars):
 # 2) The function's name
 # 3) Round () brackets
 # e.g. def myFunction()
-
+print("\nFunctions")
 def say_hi():
     print("Hi!")
 
