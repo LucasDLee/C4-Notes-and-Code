@@ -159,7 +159,7 @@ print(person)
 # 2) Have the keys of name, population, and location
 # 3) Name and location be strings and population is a number
 # 4) You can make up your values
-# 5) Print all of your keys and values
+# 5) Print all of your keys and values separately
 # 6) Update your school's name to something else and then print the school name only
 
 school = {
@@ -169,7 +169,7 @@ school = {
 }
 print(school.keys())
 print(school.values())
-school.update({"name": "SFU"})
+school["name"] = "SFU"
 print(school["name"])
 
 # If-statements #
@@ -234,19 +234,17 @@ elif dice >= 20:
 else:
     print("Help")
 
-
-
-
-### Class 3 ###
-print("\nClass 3\n")
-
 # and/or in if-statements
-
 if a == 2 and b == 3:
     print("a is 3 and b is 3")
 
 if a == 2 or b == 3:
     print("a is 2 and b is 3")
+
+
+
+### Class 3 ###
+print("\nClass 3\n")
 
 # Loops #
 
@@ -309,7 +307,7 @@ city = "Richmond"
 for j in city:
     print(j)
 
-# See the first while-loop we made on line 249
+# See the first while-loop we made on
 # We can do the same thing with a for-loop using range()
 for k in range(10):
     print(k)
@@ -518,68 +516,3 @@ class School:
 
 print(School("McMath", 100, 6, 2343))
 print(School("Burnett", 8, 435, 1))
-
-# Inheritance: Classes continued #
-
-# It is when one class is a part of, or depends on, another class
-
-# 1) Parent class: Class being inherited from
-# 2) Child class: Part of another class (Child depends on Parent)
-
-class Person5:
-    def __init__(self, fname, lname):
-        self.firstName = fname
-        self.lastName = lname
-
-    def __str__(self):
-        return (self.firstName + " " + self.lastName)
-
-class Student(Person5): # Student depends on Person5
-    def __init__(self, fname, lname, gr, studNum):
-        Person5.__init__(self, fname, lname)
-        # super().__init__(self, eC, hC, h, isEmp) does the same thing as above
-        self.grade = gr
-        self.studentNumber = studNum
-
-s1 = Student("Joe", "Obama", 3, 123)
-print(s1) # Notice how it prints the full name. That's because its take the __str__ function from its parent's class
-
-class Student2(Person5):
-    def __init__(self, fname, lname, gr, studNum):
-        Person5.__init__(self, fname, lname)
-        # super().__init__(self, eC, hC, h, isEmp) does the same thing as above
-        self.grade = gr
-        self.studentNumber = studNum
-
-    # We can either explicitly tell our code to take the __str__ function from the Parent class
-    # or we can make our own
-    def __str__(self):
-        # return super().__str__()
-        return (super().__str__() + " is in grade " + str(self.grade) + " with student #" + str(self.studentNumber))
-        # IF we want something from our parent's class, just write self.variableName
-
-s2 = Student2("Joe", "Obama", 3, 123)
-print(s2)
-
-### ACTIVITY: ###
-
-# Using the School class you made in the previous activity, make a Classroom that inherits from School:
-# 1) The Classroom class should have both __init__() and __str__() functions
-# 2) Every classroom should have the variables of capacity (number), roomNumber (number), floorNumber (number), and isOccupied (boolean)
-# 3) The __str__() function should return "Classroom #" + self.roomNumber + " is on floor " + self.floorNumber + " at " + self.schoolName
-# 4) Make a new object of Classroom and print it out
-
-class Classroom(School):
-    def __init__(self, name, nOfC, t, s, capacity, rN, fN, iO):
-        super().__init__(name, nOfC, t, s)
-        self.capacity = capacity
-        self.roomNumber = rN
-        self.floorNumber = fN
-        self.isOccupied = iO
-
-    def __str__(self):
-        return ("Classroom #" + str(self.roomNumber) + " is on floor " + str(self.floorNumber) + " at " + self.schoolName)
-
-
-c1 = Classroom("McMath", 100, 6, 2343, 20, 1, 2, True)
-print(c1)

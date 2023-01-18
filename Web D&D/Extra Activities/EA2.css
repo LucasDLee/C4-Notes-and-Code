@@ -1,0 +1,35 @@
+body {
+    display: grid;
+    grid-template-columns: 20em 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "aside main"
+        "footer footer";
+}
+
+header {
+    background-color: blue;
+    grid-area: header;
+}
+
+nav {
+    background-color: green;
+    grid-area: nav;
+}
+
+aside {
+    background-color: red;
+    grid-area: aside;
+}
+
+main {
+    background-color: orange;
+    grid-area: main;
+}
+
+footer {
+    background-color: yellow;
+    grid-area: footer;
+}
