@@ -328,6 +328,7 @@ else:
 # Some notes:
 # 1) len(cars) is the size of your list
 # 2) cars[0] is the beginning of your list
+cars = ["Ferrari", "Volvo", "Toyota", "Mercedes"]
 
 i = 0
 while i < len(cars):
@@ -336,7 +337,7 @@ while i < len(cars):
 
 
 
-# Class 4 #
+### Class 4 ###
 print("\nClass 4\n")
 
 # Functions #
@@ -379,6 +380,7 @@ add(7, 20)
 ### ACTIVITY: ###
 
 # This activity involves "functions" and "loops"
+# Your goal is to make a function that will repeat a specific statement for as many times as you tell it to
 # 1) Make a function called "count_sheep". This function will take 1 argument called "number_of_sheep"
 # 2) In your "count_sheep" function, make a for-loop that will run depending on how many sheep you input in "number_of_sheep"
 #   2.1) Use "range" for your ending condition
@@ -393,9 +395,6 @@ def count_sheep(number_of_sheep):
     for x in range(number_of_sheep):
         print("I have counted " + str(x) + " sheep")
 
-
-# Functions continued #
-
 # When we make a function, sometimes it can "return" us the result
 # This is useful as we can get very complicated calculations and by having "return" in a function
 # allows us to do those calculations and associate them to some variable afterwards
@@ -404,11 +403,27 @@ def count_sheep(number_of_sheep):
 def divide(x, y):
     return x / y
 
-divide(3, 4) # notice how nothing is printed here
+divide(3, 4)
+# Notice how nothing is printed here
+# divide(3, 4) becomes 0.75
 print(divide(3, 4))
 
 get_divide_function_value = divide(5, 2)
 print(get_divide_function_value)
+
+### ACTIVITY ###
+
+# In this activity, you will checking if the Pythagorean theorem is true/false for a triangle depending on the length of the sides you give it
+# https://en.wikipedia.org/wiki/Pythagorean_theorem
+
+# Make a function called is_pythagorean with 3 arguments called x, y, and z
+# Return true if x^2 + y^2 equals to z^2 and false if it doesn't
+
+def is_pythagorean(x, y, z):
+    return (((x*x) + (y*y)) == (z*z))
+
+print(is_pythagorean(3, 4, 5)) # true
+print(is_pythagorean(1, 1, 2)) # false
 
 # Arbritrary Arugments in Functions
 
@@ -420,6 +435,22 @@ def my_students(*students):
 my_students("Abe", "Bob", "Carrey")
 my_students("Abe", "Bob", "Carrey", "Deanna") # notice how "Deanna" isn't used here
 # my_students("Abe", "Bob") # notice how we get an error because we expect 3 students to print out but only 2 are present
+
+### ACTIVITY: ###
+
+# In this activity, you'll be dealing with "arbritrary functions" and "loops"
+# Make a function called print_all_people with 1 arbritrary argument called people
+# Using a loop, print every individual person in *people
+# Note: Arbritrary arguments are LISTS
+
+def print_all_people(*people):
+    for x in people:
+        print(x)
+
+print_all_people("Rovan", "Mikko", "Rex", "Oceania", "Kaylie", "Itamar", "Amanda", "Andy", "Elaina", "Sarah", "William", "Haoxuan")
+
+
+### Class 5 ###
 
 # Classes #
 
@@ -463,11 +494,6 @@ print(p2.eye_colour)
 print(p2.height)
 print(p2.is_employed)
 
-
-
-# Class 5 #
-
-# Classes continued #
 
 # Notice how when we print p1 or p2 by itself, we get a weird message declaring the class name and a bunch of letters and numbers
 # That is the class representation as a string

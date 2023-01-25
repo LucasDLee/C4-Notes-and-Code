@@ -12,7 +12,7 @@ Here, you'll find my notes regarding basic CSS formatting. CSS is the "look" of 
 
 ### Connecting Your CSS File to Your HTML File
 
-In the "head" of your HTML file, that is where we keep all of our information about our website such as the title and alphabet. We also want to connect any other files that our website might need (like CSS or JavaScript (JS) files). If we don't do that, the CSS we write won't show up on our website. We do that like so:
+In the `<head></head>` of your HTML file, that is where we keep all of our information about our website such as the title and computer alphabet. We also want to connect any other files that our website might need (like CSS or JavaScript (JS) files). If we don't do that, the CSS we write won't show up on our website. We do that like so:
 
 ```html
 <!DOCTYPE html>

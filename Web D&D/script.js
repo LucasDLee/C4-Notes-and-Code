@@ -13,7 +13,7 @@ console.log(myName)
 // camelCase is a type of variable naming style. The first word is lowercase and the first letter in the next words are uppercase
 // e.g. superString, theSkyIsBlue
 
-// DATA TYPES
+// Primitive Data Types
 
 // Strings (words)
 // All strings have quotation marks
