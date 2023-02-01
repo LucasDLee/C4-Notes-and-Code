@@ -1,8 +1,9 @@
 ### Class 1 ###
+print("\nClass 1\n")
 
 # Classes #
 
-# Python is what we call an Object-Oriented language. This means we get items like a person or a building, 
+# Python is what we call an Object-Oriented language. This means we get items like a Vehicle or a building, 
 # get their main properties (hair colour, height, weight), and objectify them
 
 # To make a class, we need the following:
@@ -26,8 +27,8 @@ print(v1.colour)
 print(v1.has_bluetooth)
 print(v1.num_of_wheels)
 
-# However, every Person is different. As such, when we make a class, we may want to "initialize" it
-# When we make a new Person, we can input certain properties to create (or initialize) the class
+# However, every Vehicle is different. As such, when we make a class, we may want to "initialize" it
+# When we make a new Vehicle, we can input certain properties to create (or initialize) the class
 
 class Vehicle2:
     def __init__(self, b, c, bt, w, o):
@@ -36,7 +37,7 @@ class Vehicle2:
         self.has_bluetooth = bt
         self.num_of_wheels = w
         self.owner = o
-# "self" refers to the Person2's template and how we can put things in that template to get unique Person2's
+# "self" refers to the Vehicle2's template and how we can put things in that template to get unique Vehicle2's
 
 v2 = Vehicle2("Ferrari", "Aqua", False, 3, "Ruby")
 print(v2)
@@ -97,7 +98,9 @@ print(MyCity("Funky Town", 100, 6, True))
 print(MyCity("Atlantis", 8, 435, False))
 
 
+
 ### Class 2 ###
+print("\nClass 2\n")
 
 # Inheritance #
 # It is when one class is a part of, or depends on, another class
@@ -121,9 +124,9 @@ class Car(Vehicle5): # Car depends on Vehicle5
         self.seats = s
 
 c1 = Car("Ferrari", "Black", 3, 9)
-print(c1) 
+print(c1)
 # Notice how it prints "A Ferrari, black vehicle with 3 wheels"
-# The Car class takes teh __str__() function from its parent
+# The Car class takes the __str__() function from its parent
 
 class Car2(Vehicle5): # Car depends on Vehicle5
     def __init__(self, b, c, w, s):
@@ -147,7 +150,7 @@ print(c2)
 # 2) Every MyStore should have variables of store_name (string), date_established (number), and is_open (boolean)
 # 3) In the __str__() function, it should print: [store_name] is in [city_name] and was established in [date_established]. 
 # 4) Make a new object of MyStore and print it out
-# 5) Finally, make a function called check_if_open(self) that returns is_open
+# 5) Finally, make a function called check_if_open(self) in MyStore that returns is_open
     # 5.1) Write print([class of MyStore].check_if_open()) to see your output
 
 class MyStore(MyCity):
@@ -167,3 +170,44 @@ class MyStore(MyCity):
 store1 = MyStore("Vulcan", 1, 6, 2343, "Walmart", 1900, False)
 print(store1)
 print(store1.check_if_open())
+
+
+### Class 3 ###
+
+# Exception Handling #
+
+# Sometimes, we try to do things that aren't allowed and that crashes our code
+# With Exceptions, we can "catch" those problems and tell it to do something else that won't crash our program
+# https://docs.python.org/3/library/exceptions.html
+
+# def divide(x, y):
+#     return x / y
+
+# print(divide(1, 0)) # gives ZeroDivisionError
+
+def divide(x, y):
+    try:
+        return x / y
+    except ZeroDivisionError:
+        return "You tried to divide by 0"
+    except:
+        return "IDK"
+
+print(divide(1, 0)) # gives ZeroDivisionError
+print(divide(1, 2)) # 0.5
+
+### ACTIVITY ###
+# Make a function that tries to subtract 2 numbers
+# 1) The function's name will be called "subtract" with 2 arguments of x and y
+#   1.1) If everything is all good, return the product of x and y
+# 2) Use an exception that catches a TypeError if you don't input a number
+#   2.1) If you catch this exception, return "You must subtract 2 numbers"
+
+def subtract(x, y):
+    try:
+        return x - y
+    except TypeError:
+        return "You must subtract 2 numbers"
+
+print(subtract(3, 9)) # -6
+print(subtract("d", 35)) # You must subtract 2 numbers

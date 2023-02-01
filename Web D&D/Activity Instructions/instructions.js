@@ -37,7 +37,7 @@ switch(city) {
 	case "Vancouver":
 		console.log("Welcome to Vancouver")
 		break;
-	case "Ontario":
+	case "Ottawa":
 		console.log("You are in the capital of Canada");
 		break;
 	case "Toronto":

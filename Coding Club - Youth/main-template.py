@@ -383,18 +383,19 @@ add(7, 20)
 # Your goal is to make a function that will repeat a specific statement for as many times as you tell it to
 # 1) Make a function called "count_sheep". This function will take 1 argument called "number_of_sheep"
 # 2) In your "count_sheep" function, make a for-loop that will run depending on how many sheep you input in "number_of_sheep"
-#   2.1) Use "range" for your ending condition
-			# 2.1.1) "range" goes through a sequence of numbers
-			# 2.1.2) e.g. range(6) gives us 0, 1, 2, 3, 4, 5
+#   2.1) Use "range()" for your ending condition
+        # 2.1.1) "range()" goes through a sequence of numbers
+        # 2.1.2) e.g. range(6) gives us 0, 1, 2, 3, 4, 5
 #   2.2) e.g. if number_of_sheep is 3, your loop will run 3 times
 #   2.3) e.g. if number_of_sheep is 2342, your loop will run 2342 times
-# 3) In your for-loop, print to the console: "I have counted " + str(number_of_sheep) + " sheep"
+# 3) In your for-loop, print to the console: "I have counted " + str(whatever your looping variable is) + " sheep"
 #   3.1) e.g. if number_of_sheep is 3, you will see "I have counted 1 sheep", "I have counted 2 sheep", "I have counted 3 sheep"
 
 def count_sheep(number_of_sheep):
     for x in range(number_of_sheep):
-        print("I have counted " + str(x) + " sheep")
+        print("I have counted " + str(x + 1) + " sheep")
 
+count_sheep(7)
 # When we make a function, sometimes it can "return" us the result
 # This is useful as we can get very complicated calculations and by having "return" in a function
 # allows us to do those calculations and associate them to some variable afterwards
@@ -425,9 +426,15 @@ def is_pythagorean(x, y, z):
 print(is_pythagorean(3, 4, 5)) # true
 print(is_pythagorean(1, 1, 2)) # false
 
-# Arbritrary Arugments in Functions
 
-# Arbritrary argument (*): Used if you don't know how many arguments you want in your function
+
+
+### Class 5 ###
+print("\nClass 5\n")
+
+# Arbritrary Arugments in Functions #
+
+# Arbritrary argument (*my_argument): Used if you don't know how many arguments you want in your function
 
 def my_students(*students):
     print("I teach " + students[0] + ", " + students[1] + ", and " + students[2])
@@ -442,6 +449,7 @@ my_students("Abe", "Bob", "Carrey", "Deanna") # notice how "Deanna" isn't used h
 # Make a function called print_all_people with 1 arbritrary argument called people
 # Using a loop, print every individual person in *people
 # Note: Arbritrary arguments are LISTS
+#       e.g. *my_argument => my_argument = [a, b, c, d, ...]
 
 def print_all_people(*people):
     for x in people:
@@ -449,8 +457,49 @@ def print_all_people(*people):
 
 print_all_people("Rovan", "Mikko", "Rex", "Oceania", "Kaylie", "Itamar", "Amanda", "Andy", "Elaina", "Sarah", "William", "Haoxuan")
 
+# Lambda Functions #
 
-### Class 5 ###
+# An anonymous function (or a function with no name)
+# Used for small calculations
+# Format: lambda [arguments] : [return expression]
+# e.g. lambda x : x + 5
+    # if x = 3, we return 8
+    # if x = -7, we return 2
+print((lambda x : x + 5)(3))
+
+# def multiply(x, y):
+#     return x * y
+
+# You can attach Lambda Functions to variables
+multiply = lambda x, y : x * y
+print(multiply(3, 5)) # 15
+print(multiply(8, 6)) # 48
+
+# Lambda Functions can also be in a regular function
+def subtract(x):
+    return lambda y : x - y
+
+print(subtract(3)(8)) # 3 - 8 = 5, x = 3, y = 8
+print(subtract(12)(-7)) # 12 - -7 = 19, x = 12, y = -7
+
+### ACTIVITY ###
+
+# This activity will involve "lambda functions"
+# Your goal is to make a lambda function that has 1 argument called
+# my_name and print out the saying "Hi, [my_name]!"
+# 1) Make a variable called new_greeting
+# 2) Have new_greeting be equal to a lambda function that takes 1 argument of my_name
+# 3) Print to the console: "Hi, [my_name]!"
+
+new_greeting = lambda my_name : print("Hi,", my_name, "!")
+new_greeting("Lucas") # Hi, Lucas!
+new_greeting("Kasie") # Hi, Kasie!
+
+
+
+
+### Class 6 ###
+print("\nClass 6\n")
 
 # Classes #
 

@@ -54,7 +54,7 @@ Apply the following stylings to the ordered list tag:
 Apply the following stylings to list items in the ordered list:
     - Text colour of orange
 */
-ol {
+/* ol {
     list-style-type: circle;
     border-width: 1px;
     border-style: dashed;
@@ -62,6 +62,13 @@ ol {
 
 ol li {
     color: orange;
+} */
+
+ol {
+    border-style: solid;
+    border-width: 1px;
+    border-color: orange;
+    color: blue;
 }
 
 
