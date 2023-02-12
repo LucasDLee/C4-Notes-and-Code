@@ -92,7 +92,7 @@ class MyCity:
         self.has_costco = hc
     
     def __str__(self):
-        return (self.city_name + " has " + str(self.population) + " people with a GDP of " + str(self.gdp) + ".Also, Costco is " + str(self.has_costco))
+        return (self.city_name + " has " + str(self.population) + " people with a GDP of " + str(self.gdp) + ". Also, Costco is " + str(self.has_costco))
 
 print(MyCity("Funky Town", 100, 6, True))
 print(MyCity("Atlantis", 8, 435, False))
@@ -136,7 +136,7 @@ class Car2(Vehicle5): # Car depends on Vehicle5
     # We can either explicitly tell our code to take the __str__ function from the Parent class
     # or we can make our own
     def __str__(self):
-        return ("A " + self.brand + ", " + self.colour + " vehicle with " + str(self.wheels) + " wheels "  + " and " + str(self.seats) + " seats")
+        return ("A " + self.brand + ", " + self.colour + " vehicle with " + str(self.wheels) + " wheels and " + str(self.seats) + " seats")
         # IF we want something from our parent's class, just write self.variableName
 
 
@@ -211,3 +211,68 @@ def subtract(x, y):
 
 print(subtract(3, 9)) # -6
 print(subtract("d", 35)) # You must subtract 2 numbers
+
+# Scopes #
+# Sometimes when we're coding, we might have variables with the same name (e.g. 2 variables called "x") in different parts of our code (e.g. "x" in a loop and "x" in a function)
+# However, which variable (e.g. "x") are we really using?
+
+# Local Scopes
+# When our variable is found inside a function
+
+def print_name():
+    j = "Lucas" # local variable is "j"
+    print(j)
+
+print_name()
+
+# Global Scopes
+
+j = "Lee"
+
+def print_name2():
+    j = "Lucas"
+    print(j)
+
+print(j) # Lee
+print_name2() # Lucas
+
+# "global" keyword: Gets the variable with the same name OUTSIDE of our function
+
+j = "Lee" # global variable
+
+def print_name3():
+    global j # looks for the global variable
+    j = "Lucas" # changes j = "Lee" to j = "Lucas"
+
+print_name3() # calls the function so the global variable sets j = "Lucas"
+print(j) # Lucas
+
+### ACTIVITY ###
+# 1) Make a variable called "pi" which is set to 0 (we will edit this later)
+# 2) After that, make a function called "radius_of_a_circle" which takes 1 argument called "circumference"
+# 3) Inside the function, make a variable called "pi" which calls its global counterpart and set it equal to 3.1415
+# 4) Finally, this function will return a variable called "radius" which is equal to (circumference)/(2*pi)
+
+pi = 0
+def radius_of_a_circle(circumference):
+    global pi
+    pi = 3.1415
+    radius = (circumference)/(2*pi)
+    return radius
+
+print(radius_of_a_circle(10)) # 1.5915...
+print(radius_of_a_circle(pi)) # 0.5
+print(pi) # 3.1415
+
+# Modules #
+# When we're writing code, we don't want it all to be in one file as that can get quite lengthy so we can break it up into "modules"
+# Modules are different files that hold our code
+
+import module1
+module1.one_piece()
+
+# We can also rename our module into something more coherent
+import module1 as m1
+m1.one_piece()
+print(m1.my_games["game1"])
+print(m1.computer)

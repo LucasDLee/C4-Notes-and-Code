@@ -445,7 +445,7 @@ my_students("Abe", "Bob", "Carrey", "Deanna") # notice how "Deanna" isn't used h
 
 ### ACTIVITY: ###
 
-# In this activity, you'll be dealing with "arbritrary functions" and "loops"
+# In this activity, you'll be dealing with "arbritrary arguments" and "loops"
 # Make a function called print_all_people with 1 arbritrary argument called people
 # Using a loop, print every individual person in *people
 # Note: Arbritrary arguments are LISTS
@@ -479,7 +479,7 @@ print(multiply(8, 6)) # 48
 def subtract(x):
     return lambda y : x - y
 
-print(subtract(3)(8)) # 3 - 8 = 5, x = 3, y = 8
+print(subtract(3)(8)) # 3 - 8 = -5, x = 3, y = 8
 print(subtract(12)(-7)) # 12 - -7 = 19, x = 12, y = -7
 
 ### ACTIVITY ###

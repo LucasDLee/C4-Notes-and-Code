@@ -186,8 +186,10 @@ multipliedNumber = 3
 
 //Arrays
 let cars = ['BMW', 'Toyota', 'Volvo']
-console.log(cars[0])
-cars[0] = 'Ferrari';
+console.log(cars[0]) // BMW
+console.log(cars[1]) // Toyota
+console.log(cars[2]) // Volvo
+cars[0] = 'Ferrari'
 console.log(cars[0])
 
 // Printing all the items in my array
