@@ -167,9 +167,10 @@ class MyStore(MyCity):
         return self.is_open
 
 
-store1 = MyStore("Vulcan", 1, 6, 2343, "Walmart", 1900, False)
+store1 = MyStore("Vulcan", 1, 6, True, "Walmart", 1900, False)
 print(store1)
 print(store1.check_if_open())
+
 
 
 ### Class 3 ###
@@ -264,7 +265,14 @@ print(radius_of_a_circle(10)) # 1.5915...
 print(radius_of_a_circle(pi)) # 0.5
 print(pi) # 3.1415
 
+
+
+### Class 4 ###
+
+print("\nClass 4\n")
+
 # Modules #
+print("\nModules")
 # When we're writing code, we don't want it all to be in one file as that can get quite lengthy so we can break it up into "modules"
 # Modules are different files that hold our code
 
@@ -276,3 +284,70 @@ import module1 as m1
 m1.one_piece()
 print(m1.my_games["game1"])
 print(m1.computer)
+
+# Regular Expressions (RegEx) #
+print("\nRegEx")
+# When we want a user to input a specific set of words or numbers, we want to account for all scenarios and we can use RegEx to create a specific string format for that.
+# RegEx Definitions: https://www.w3schools.com/python/python_regex.asp
+# RegEx Checker: https://regex101.com/
+
+import re # import RegEx
+name = "Lucas"
+
+# []: Set of characters/numbers
+single_letter_search = re.search("a", name) # can also do "[a]"
+print(single_letter_search)
+
+lowercase_search = re.search("[a-z]", name)
+print(lowercase_search) # matches with 'u' which is the 1st lowercase letter
+uppercase_search = re.search("[A-Z]", name) # matches with 'L' which is the 1st uppercase letter
+print(uppercase_search)
+
+search_everything = re.search("[a-zA-z]+", name)
+print(search_everything)
+
+all_lowercase_letters = re.findall("[a-z]", name)
+print(all_lowercase_letters) # returns a LIST
+
+sin = "123456789"
+all_numbers = re.findall("[0-9]", sin)
+print(all_numbers)
+
+# *: Zero or more occurences
+# +: One or more occurences
+c4 = "City Centre Community Centre"
+zero_search = re.search("[a-z]*", c4)
+print(zero_search)
+one_search = re.search("[a-z]+", c4)
+print(one_search)
+
+# {}: Exactly that number of occurences
+debit_card = "1234567890123456" # 16 digits
+print(re.findall("[0-9]", debit_card)) # prints each individual number
+print(re.findall("[0-9]{16}", debit_card)) # prints the entire debit card together
+
+### ACTIVITY ###
+# 1) Make a function called valid_email(). This function takes 1 argument of user_email
+# 2) All emails follow a certain format:
+# - Some combination of letters & numbers followed by the @ symbol and then the service's domain name which consists of letters only
+# - For example, c4@gmail1.com is valid
+# - For example, c4@gmail2.123com is not valid
+# 3) Using RegEx, check if user_email is valid by returning a boolean following the format in #2
+
+# Some notes:
+# - Use findall()
+
+def valid_email(user_email):
+    try:
+        is_vaild = re.findall("[a-zA-Z0-9]+[@][a-zA-Z0-9]+[.][a-zA-Z]+", user_email)
+        return is_vaild[0] == user_email    
+    except IndexError:
+        return False
+
+print(valid_email("32423@a.o")) # True
+print(valid_email("32423@a.")) # False
+print(valid_email("c4@gmail1.com")) # True
+print(valid_email("abc@")) # False
+print(valid_email("c4@gmail2.123com")) # False
+print(valid_email("c4@3243.com")) # True
+print(valid_email("a@a.a")) # True

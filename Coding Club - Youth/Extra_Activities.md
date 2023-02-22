@@ -46,7 +46,7 @@ Here are some examples of what your function should return:
     print(vowel_counter("bc")) # 0
 ```
 
-## EA 3: Calculator Class
+## EA 3: University Class
 
 ### Description
 

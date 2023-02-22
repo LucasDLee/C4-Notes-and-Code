@@ -30,7 +30,7 @@ async def on_message(message):
 	if message.author == client.user:
 		return
 
-	# For example, if we send 'Hello', our bot will respond with 'Hello!'
+	# For example, if we send '!hello', our bot will respond with 'Hello!'
 	if message.content.startswith('!hello'):
 		await message.channel.send('Hello!')
 		return # Use return to stop our code
@@ -54,7 +54,7 @@ async def on_message(message):
 
 	# Step 5: Adding Reactions
 	if message.content.startswith('!heart'):
-		emoji = '\U0001f49d' # The emoji's value is attached to the "Unicode number" which is a way to format all emojis and characters over the internet
+		emoji = '\U0001f49d' # The emoji's value is attached to the "Unicode number" which is a way to format all emojis and characters from the internet
 		await message.add_reaction(emoji)
 		return
 

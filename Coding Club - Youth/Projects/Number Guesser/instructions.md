@@ -4,6 +4,10 @@
 
 In this final activity, you will be making a number guesser game where a user/player has to guess the number that is generated in your Python code.
 
+Here's an example of what it should look like when you're done:
+
+![example](snapshot.png)
+
 ## Step 1: Setting Up
 
 Here, we need to make some starting variables and functions to build the structure of our game. Do the following:

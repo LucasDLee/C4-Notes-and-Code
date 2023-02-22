@@ -1,3 +1,5 @@
+# Step 1
+
 import random
 
 def run_game():
@@ -12,9 +14,11 @@ def run_game():
     computer_symbol = -1
     play_again = True
 
+    # Step 2
     while play_again == True:
         player_move = str(input("\nWhat is your move (R, P, S)? ")).upper()
 
+        # Step 3
         # Assigning moves and symbols
         if player_move == 'R':
             player_move = "rock"
@@ -26,9 +30,10 @@ def run_game():
             player_move = "scissors"
             player_symbol = 2
         else:
-            player_symbol = -1
             player_move = "invalid"
+            player_symbol = -1
 
+        # Step 4
         computer_symbol = random.randint(0,2)
         computer_move = ""
 
@@ -49,6 +54,7 @@ def run_game():
         else:
             computer_move = "unknown"
 
+        # Step 5
         # Checking who wins
         if player_symbol > computer_symbol: # player wins
             if computer_symbol == 0 and player_symbol == 2:
@@ -68,13 +74,16 @@ def run_game():
         else:
             print("It was a tie!")
 
+        # Step 6
         print("The player's move was " + player_move + " and the computer's move was " + computer_move)
         print("The player's score is " + str(player_score))
         print("The computer's score is " + str(computer_score))
+        
+        # Step 7
         play_again = str(input("Do you want to play again (Y or N)? ")).upper()
-
         if play_again == 'N':
             play_again = False
+            print("\nGame has been terminated")
         else:
             play_again = True
 

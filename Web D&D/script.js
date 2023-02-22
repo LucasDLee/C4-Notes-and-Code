@@ -184,19 +184,6 @@ let multipliedNumber = multiply(4, 5)
 console.log(multipliedNumber)
 multipliedNumber = 3
 
-//Arrays
-let cars = ['BMW', 'Toyota', 'Volvo']
-console.log(cars[0]) // BMW
-console.log(cars[1]) // Toyota
-console.log(cars[2]) // Volvo
-cars[0] = 'Ferrari'
-console.log(cars[0])
-
-// Printing all the items in my array
-for(let i = 0; i < cars.length; i++) {
-	console.log(cars[i])
-}
-
 // More Math
 console.log(Math.PI)
 console.log(Math.round(0.5))
@@ -241,6 +228,21 @@ function divide() {
 	divideParagraphText.innerHTML = x + " / " + y + " = " + result
 }
 
+// Class 7
+
+//Arrays
+let cars = ['BMW', 'Toyota', 'Volvo']
+console.log(cars[0]) // BMW
+console.log(cars[1]) // Toyota
+console.log(cars[2]) // Volvo
+cars[0] = 'Ferrari'
+console.log(cars[0])
+
+// Printing all the items in my array
+for(let i = 0; i < cars.length; i++) {
+	console.log(cars[i])
+}
+
 // Query Selector
 // If we want to get a certain HTML element or class, we can use query selector
 // Gets the FIRST HTML element it finds
@@ -250,3 +252,12 @@ changeParagraphColour.style.color = 'azure'
 
 let changeHeading1BackgroundColour = document.querySelector('h1')
 changeHeading1BackgroundColour.style.backgroundColor = 'turquoise'
+
+// If we want to get all of a specific HTML element on a page, we can use querySelectorAll
+let changeAllParagraphs = document.querySelectorAll("p")
+// querySelectorAll() returns an array
+console.log(changeAllParagraphs)
+changeAllParagraphs.forEach(function(individualParagraph) {
+	individualParagraph.style.borderStyle = 'solid'
+	individualParagraph.style.borderColor = 'purple'
+})
