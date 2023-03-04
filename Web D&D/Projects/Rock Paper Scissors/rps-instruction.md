@@ -4,7 +4,7 @@
 
 In this final activity, you will be doing it yourselves through a combination of HTML, CSS, and JavaScript. Everything you have learned thus far will be combined into this one activity where you will be making **Rock Paper Scissors**. Here's what it should look like when you finish everything:
 
-![example](snapshot.PNG)
+![example](snapshot.png)
 
 You should make a new Repl.it workplace for this final activity. Do not delete anything in HTML when you make a new workplace unless asked to.
 

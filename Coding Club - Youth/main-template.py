@@ -45,8 +45,8 @@ print(my_name) # printing the variable means I print the value associated with i
 my_name = "Lee" # change the value of our variable
 print(my_name)
 
-# Pascal Case is a type of variable naming style. All spaces are replaced with underlines and all words are in lowercase
-# e.g. super_string, pascal_case
+# Snake Case is a type of variable naming style. All spaces are replaced with underlines and all words are in lowercase
+# e.g. super_string, snake_case
 
 ### ACTIVITY: ###
 # 1) Make a variable called school and set the value to whatever school you go to

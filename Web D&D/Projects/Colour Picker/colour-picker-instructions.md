@@ -15,18 +15,18 @@ You should make a new Repl.it workplace for this final activity. Do not delete a
     1) Make a heading 1 with the words "Colour Picker"
     2) Make a paragraph tag with the words "Choose a colour for the background!"
     3) Use ``<input type="color" id="chooseColour">`` to get the colour wheel
-    4) Using the code provided in step iii, make a **button (not an input)** with **type of "submit"** with the **id of "myColour"**
+    4) Using the code provided in step iii, make a **button (not an input)** with **type of "submit"** with the **id of "submitColour"**
     5) Make a paragraph tag with the copyright symbol (``&copy;``) and the words "[your name]'s Colour Picker"
 
 ## Part 2: JavaScript
 
-1) Make a *variable* with the name of *myColour*. *myColour* is connected to the ID of "chooseColour" from your HTML file
+1) Make a *variable* with the name of *submit*. *submit* is connected to the ID of "submitColour" from your HTML file
     1) To get an ID from HTML in JavaScript, we use ``document.getElementById(your ID goes here in quotation marks)``
-2) In your event listener, make the following:
+2) Attach an *event listener* (``addEventListener()``) to *submit* with the *action* of "click" and an anonymous function (function with no name). Make the following inside of the *event listener*:
     1) A variable called *websiteBackground* that is attached to the HTML ``body`` tag (``document.querySelector("body")``)
     2) A variable called *getColour* that is attached to the ID called "chooseColour" from HTML
-    3) Finally, set your website background colour to equal the value/colour you chose
-        1) To change your website's background colour, you can write ``myVariable.style.backgroundColour`` where ``myVariable`` is the variable connected to your website's background
+    3) Finally, set your **website background colour** to *equal* the **value/colour you chose**
+        1) To change your website's background colour, you can write ``myVariable.style.backgroundColor`` where ``myVariable`` is the variable connected to your website's background
         2) To get the value (a.k.a. the colour you chose), you can write ``myVariable.value`` where ``myVariable`` is the variable connected to your input type of colour
 
 ## Part 3: CSS
@@ -50,4 +50,4 @@ Now, apply the following styles to the *html* tag:
 - Align the text to the center
 - Set margin to auto
 
-When you combine these CSS stylings, you'll end up with your text in the center of your website.
+When you combine these CSS stylings, you'll end up with your text in the center of your website just like in the snapshot at the top of the instructions.

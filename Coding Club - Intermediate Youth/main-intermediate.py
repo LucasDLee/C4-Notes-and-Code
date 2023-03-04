@@ -303,6 +303,7 @@ print(lowercase_search) # matches with 'u' which is the 1st lowercase letter
 uppercase_search = re.search("[A-Z]", name) # matches with 'L' which is the 1st uppercase letter
 print(uppercase_search)
 
+name = "Lucas Lee"
 search_everything = re.search("[a-zA-z]+", name)
 print(search_everything)
 
@@ -329,18 +330,21 @@ print(re.findall("[0-9]{16}", debit_card)) # prints the entire debit card togeth
 ### ACTIVITY ###
 # 1) Make a function called valid_email(). This function takes 1 argument of user_email
 # 2) All emails follow a certain format:
-# - Some combination of letters & numbers followed by the @ symbol and then the service's domain name which consists of letters only
+# - Some combination of letters & numbers followed by the @ symbol. After that is the website name with letters and numbers followed by the websites's domain name (.net, .com, .org, .ca, etc.) which consists of letters only
 # - For example, c4@gmail1.com is valid
 # - For example, c4@gmail2.123com is not valid
 # 3) Using RegEx, check if user_email is valid by returning a boolean following the format in #2
 
 # Some notes:
 # - Use findall()
+# - You might get an IndexError so use exception handling to overcome that
 
 def valid_email(user_email):
     try:
-        is_vaild = re.findall("[a-zA-Z0-9]+[@][a-zA-Z0-9]+[.][a-zA-Z]+", user_email)
-        return is_vaild[0] == user_email    
+        # is_valid = re.findall("\.[a-zA-Z]+", user_email)
+        # print(is_valid)
+        is_valid = re.findall("[a-zA-Z0-9]+[@][a-zA-Z0-9]+[.][a-zA-Z]+", user_email)
+        return is_valid[0] == user_email    
     except IndexError:
         return False
 
@@ -351,3 +355,77 @@ print(valid_email("abc@")) # False
 print(valid_email("c4@gmail2.123com")) # False
 print(valid_email("c4@3243.com")) # True
 print(valid_email("a@a.a")) # True
+print(valid_email(".com")) # False
+
+
+
+### Class 5 ###
+
+# JavaScript Object Notation (JSON) #
+
+# A style of syntax for storing and exchanging data
+# You don't need to know JavaScript to use JSON
+
+import json
+
+person = '{ "name": "Lucas", "age": 21, "is_employed": true }'
+
+# Similar to a Python Dictionary
+# person = {
+#     "name": "Lucas",
+#     "age": 21,
+#     "is_employed": True
+# }
+
+load_json = json.loads(person) # converts person into a Python Dictionary
+print(load_json)
+
+# Opening JSON file
+open_my_account = open("Coding Club - Intermediate Youth\json-explanation.json")
+my_account = json.load(open_my_account)
+print(my_account)
+print(my_account["name"])
+
+# Application Programming Interfaces (APIs) #
+# A way for different softwares to connect with each other and send data
+# Many APIs use JSON to send data
+
+# https://api.nasa.gov/
+
+# Nasa's Astronomy Picture of the Day (APOD)
+import requests # used for getting API requests
+import json
+response_API = requests.get('https://api.nasa.gov/planetary/apod?api_key=dJsaDmJOddJO9frfefQ4JagcAJSeXhuJGbe6SliB') # call the API
+data = response_API.text # change the API request into plain text
+parse_json = json.loads(data) # load the API into JSON
+print(parse_json)
+print(parse_json["explanation"])
+print(parse_json["url"])
+
+# Displaying an Image
+from matplotlib import pyplot
+from matplotlib import image
+
+img = image.imread("penguin.jpg") # finds the image's file
+pyplot.imshow(img) # load the image into the library
+pyplot.axis("off") # turn off x- and y-axis
+pyplot.show() # display image in output
+
+# Displaying an Image from a URL
+
+from skimage import io
+url = "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FRB_486265257EDR_F0481570FHAZ00323M_.JPG"
+url_img = io.imread(url) # loads the image from the URL
+pyplot.imshow(url_img) # prepares the image
+pyplot.axis("off") # turn off the x- and y-axis
+pyplot.text(0, 0, "NASA's Mars Rover") # "NASA's Mars Rover" is displayed at (0, 0)
+pyplot.text(0, 100, "Launched In: 2011-11-26") # "Launched In: 2011-11-26" is displayed at (0, 100)
+pyplot.show() # display image in output
+
+### ACTIVITY ###
+# Using NASA's APOD API, display an image to the screen of the astronomy picture of the day with its explanation
+
+apod_url = io.imread(parse_json["url"])
+pyplot.imshow(apod_url)
+pyplot.text(0, 0, parse_json["title"])
+pyplot.show()

@@ -12,7 +12,7 @@ Using HTML, make the following:
 
 ![ea1](EA1.PNG)
 
-## EA2: Using CSS to Style a Ordered List
+## EA 2: Using CSS to Style a Ordered List
 
 Using CSS, we want to be able to add stylings to our HTML items to make our website look nice. In this activity, I want you to add stylings to all ordered lists (ol):
 
@@ -23,7 +23,7 @@ Using CSS, we want to be able to add stylings to our HTML items to make our webs
 
 The right border of the ordered list is supposed to be there but it just isn't in the picture above.
 
-## EA3: Basic JavaScript
+## EA 3: Basic JavaScript
 
 Try using JavaScript to print the following to the console:
 
@@ -38,7 +38,7 @@ Try using JavaScript to print the following to the console:
   - Change ``num1`` to equal 34
   - Check if ``num1`` is less than ``num2``
 
-## EA4: JavaScript Conditions
+## EA 4: JavaScript Conditions
 
 Here, we'll be trying out some if-statements ourselves. Do the following:
 
@@ -48,3 +48,8 @@ Here, we'll be trying out some if-statements ourselves. Do the following:
   - Else if ``dice`` is even (dice % 2 == 0), print "This is an even number" to the console
   - Else if ``dice`` is a multiple of 5 (dice % 5 == 0), print "You have rolled a multiple of 5"
   - Finally, have the default value print "I cannot understand your dice roll"
+
+## EA 5: Making a Function
+
+In this function, we will repeat a certain phrase a given amount of times (e.g. 5 times, 80 times, 12432 times, etc.). Make the following:
+

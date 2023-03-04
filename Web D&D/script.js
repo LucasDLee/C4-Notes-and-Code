@@ -238,6 +238,12 @@ console.log(cars[2]) // Volvo
 cars[0] = 'Ferrari'
 console.log(cars[0])
 
+// Adding to / Subtracting from Array
+cars.push('KIA')
+console.log(cars)
+cars.pop()
+console.log(cars)
+
 // Printing all the items in my array
 for(let i = 0; i < cars.length; i++) {
 	console.log(cars[i])
