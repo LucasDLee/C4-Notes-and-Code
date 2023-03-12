@@ -1,5 +1,4 @@
 def selection_sort(array):
-    
     for divider_position in range(len(array)):
         smallest = divider_position
 

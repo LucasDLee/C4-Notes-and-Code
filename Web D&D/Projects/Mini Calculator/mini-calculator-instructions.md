@@ -1,4 +1,4 @@
-# C4 Youth Colour Picker Instructions
+# C4 Preteens Mini Calculator Instructions
 
 ## Description
 

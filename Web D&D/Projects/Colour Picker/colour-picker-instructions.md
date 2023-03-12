@@ -4,7 +4,7 @@
 
 In this final activity, you will be doing it yourselves through a combination of HTML, CSS, and JavaScript. Everything you have learned thus far will be combined into this one activity where you will be making a "Colour Picker". What it does is you choose a colour and then hit submit to change the background-colour of the website. Here's what it should look like:
 
-![example](snapshot.PNG)
+![example](snapshot.png)
 
 You should make a new Repl.it workplace for this final activity. Do not delete anything in HTML when you make a new workplace unless asked to.
 
@@ -26,8 +26,8 @@ You should make a new Repl.it workplace for this final activity. Do not delete a
     1) A variable called *websiteBackground* that is attached to the HTML ``body`` tag (``document.querySelector("body")``)
     2) A variable called *getColour* that is attached to the ID called "chooseColour" from HTML
     3) Finally, set your **website background colour** to *equal* the **value/colour you chose**
-        1) To change your website's background colour, you can write ``myVariable.style.backgroundColor`` where ``myVariable`` is the variable connected to your website's background
-        2) To get the value (a.k.a. the colour you chose), you can write ``myVariable.value`` where ``myVariable`` is the variable connected to your input type of colour
+        1) To change your website's background colour, you can write ``myVariable1.style.backgroundColor`` where ``myVariable1`` is the variable connected to your website's background
+        2) To get the value (a.k.a. the colour you chose), you can write ``myVariable2.value`` where ``myVariable2`` is the variable connected to your input type of colour
 
 ## Part 3: CSS
 

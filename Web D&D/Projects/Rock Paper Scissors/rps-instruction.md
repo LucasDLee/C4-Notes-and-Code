@@ -43,7 +43,7 @@ It should look like this when you're done without CSS:
 4) Once you do that, now make an *forEach()* loop that connects to every button with a variable called *item* inside of your *forEach()*'s function
     1) The *item* variable will be attached to an "add event listener" with the parameters of *"click"* and ``function()``. Inside of your anonymous function, you will have:
         1) Make an if-statement that checks if ``item.id`` is the same as ``reset.id``. If so, call the function called ``resetGame()`` and ``return`` nothing
-        2) Make an if-statement that checks if ``item.id`` is the same as ``reset.id``. If so, change ``playerSymbol`` to equal 0 and ``playerMove`` to say *"Your move was rock!"*. Continue with making else-if statements using *paper* and *scissors* with the ``playerSymbol`` of 1 and 2 respectively
+        2) Make another if-statement that checks if ``item.id`` is the same as ``rock.id``. If so, change ``playerSymbol`` to equal 0 and ``playerMove`` to say *"Your move was rock!"*. Continue with making else-if statements using *paper* and *scissors* with the ``playerSymbol`` of 1 and 2 respectively
         3) Change the ``innerHTML`` of the **id** of *playerMove* to equal the variable with the same name
         4) Set ``computerSymbol`` to equal ``Math.floor(Math.random() * 3)``. This piece of code gives you a random number between 0 (inclusive) and 2 (exclusive)
         5) Make an if-statement that checks the following:
