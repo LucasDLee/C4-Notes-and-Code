@@ -1,11 +1,15 @@
 def selection_sort(array):
     for divider_position in range(len(array)):
-        smallest = divider_position
+        smallest = divider_position # initialize the beginning of the unsorted list as the smallest item
 
         for j in range(divider_position + 1, len(array)):
-            if array[j] < array[smallest]:
-                smallest = j
 
+            # check if the current position is smaller than the smallest item
+            if array[j] < array[smallest]:
+                # if so, set the smallest item as our current position
+                smallest = j
+        
+        # swap the beginning of the unsorted part of the list with the smallest item
         (array[divider_position], array[smallest]) = (array[smallest], array[divider_position])
 
 list1 = [5, 2, 4, -6, 1, 3]

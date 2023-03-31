@@ -43,7 +43,7 @@ Some notes:
 - ``lat``, ``lon``, and ``dim`` should be converted to **float** values (decimal numbers) by doing ``float(your number goes here)``
 - Latitude should only be between -90 and 90
 - Longitude should only be between -180 and 180
-- You don't need to make any code that checks if the user inputted a number outside of those ranges
+- You don't need to make any code that checks if the user inputted a number outside of those ranges **at this moment**
 
 ## Step 3: Asking the User for a Date
 

@@ -10,19 +10,27 @@ def run_nasa_earth_api():
     # Step 2
     print("Welcome to NASA's Earth API.\n \nThis API gets you an image based on your provided latitude and longitude.\n")
     lat = float(input("What latitude do you want to look at? "))
+    while(lat > 90 or lat < -90):
+        print("Sorry, your latitude is not accepted.")
+        lat = float(input("What latitude do you want to look at? "))
+
     lon = float(input("What longitude do you want to look at? "))
+    while(lon > 180 or lon < -180):
+        print("Sorry, your longitude is not accepted.")
+        lon = float(input("What longitude do you want to look at? "))
+    
     print("\nYour latitude was " + str(lat) + " and your longitude was " + str(lon) + ". Now, we need the dimension of the width and height your image in degrees.\n")
     dim = float(input("What is your image's dimension? "))
-    print("\nNow, we need a date for your image. Please provide in YYYY-MM-DD format.\n")
 
     # Step 3
+    print("\nNow, we need a date for your image. Please provide in YYYY-MM-DD format.\n")
     user_date = str(input("What is the date for your image? "))
     check_date = valid_date(user_date)
     while(not check_date):
         print("Your date was not valid")
         user_date = str(input("What is the date for your image? "))
         check_date = valid_date(user_date)
-        print(check_date)
+        
     print("\nYour date was " + user_date)
 
     # Step 4
