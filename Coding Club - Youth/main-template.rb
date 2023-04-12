@@ -26,6 +26,11 @@ puts 3.0 # float (decimals)
 
 puts true
 puts false
+
+## !: gives you the opposite boolean
+puts !true # false
+puts !false # true
+
 puts 5 > 2
 
 ## Connecting Stuff Together ##
@@ -42,7 +47,7 @@ puts "September " + 2022.to_s
 
 puts "\nVariables"
 my_name = "Lucas"
-puts my_name # putsing the variable means I puts the value associated with it
+puts my_name # puts-ing the variable means I puts the value associated with it
 my_name = "Lee" # change the value of our variable
 puts my_name
 
@@ -93,6 +98,12 @@ puts (5 > 0 or 2 < 0) # true
 age = 20
 puts age > 16 and age >= 19
 
+
+
+
+### Class 2 ###
+puts "\nClass 2"
+
 # Arrays (Data Type) #
 ## Used to store multiple values instead of just 1 value to a variable 
 puts "\nArrays"
@@ -108,6 +119,12 @@ puts colours[-1] # getting the last item of my array
 puts colours[colours.length() - 1] # getting the last item of my array
 colours[0] = "orange"
 print colours, "\n"
+colours.push("yellow")
+print colours, "\n"
+colours.pop()
+print colours, "\n"
+colours.pop(2)
+print colours, "\n"
 
 # Combining two arrays
 years = [2000, 2001, 2002]
@@ -120,7 +137,141 @@ print person, "\n"
 puts person
 
 
+# Hashes (Data Type) #
+puts "\nHashes"
+## Used to store "key: value" pairs
+## key: Special keywords, cannot be duplicated
+## value: Items attached to our keys
+## Similar to an array of variables
+my_grocery_store = {"Bread" => 5, "Rice" => 4, "Meat" => 12, "Milk" => 5}
+print my_grocery_store, "\n"
+puts my_grocery_store # same as print in this case
+puts my_grocery_store["Bread"] # 5
+puts my_grocery_store["Meat"] # 12
+puts my_grocery_store[5] # nothing happens
+
+## Adding to Hash
+my_grocery_store["Cocoa"] = false
+puts my_grocery_store
+
+## Deleting from Hash
+my_grocery_store.delete("Bread")
+puts my_grocery_store # no more Bread
+
+## Hashes need to be in strings or symbols
+Orange = "orange"
+my_grocery_store[Orange] = 67
+puts my_grocery_store # error
+
+## Keys and Values of Hashes
+print my_grocery_store.keys, "\n"
+print my_grocery_store.values, "\n"
+
+### ACTIVITY: ###
+
+# 1) Make a hash called my_school
+# 2) In your hash, have the keys of name, population, and location. This refers to your school name, how many people are in your school, and where your school is located respectively
+# 3) Assign values attached to your keys. You can just make up random values if you want
+# 4) Print your keys in one line and your values in another line
+# 5) Update your school's name to something else and then print the school name only
+my_school = {"name" => "SFU", "population" => 30000, "location" => "burnaby"}
+print my_school.keys, "\n"
+print my_school.values, "\n"
+my_school["name"] = "bcit"
+puts my_school["name"]
+my_school = {"Name" => "SFU", :pop => 30000, "Location": "Burnaby"}
+puts my_school
 
 
-### Class 2 ###
-puts "\nClass 2"
+# Symbols (Data Type) #
+## Alternative keys in Ruby
+puts "\nSymbols"
+
+my_electronics_store = {:tv => "Television", :pc => "Personal Computer"}
+puts my_electronics_store
+puts my_electronics_store[:tv]
+my_electronics_store[:ms] = "Microsoft" # add Microsoft to the store
+puts my_electronics_store
+my_electronics_store.delete(:pc) # delete Personal Computer
+puts my_electronics_store
+
+# The difference between Strings and Symbols is that Symbols take up less memory space and have better performance. We won't worry about this though
+
+
+
+### Class 3 ###
+puts "\nClass 3"
+
+# If-statements #
+puts "\nIf-statements"
+
+# An if-statement checks if something is true, and if it is, then it will run a specific set of code
+
+# All if-statements start with the "if" keyword
+a = 5
+b = 3
+
+if a > b
+    puts "a is bigger than b"
+end # needed when we finish an if-statement
+
+## Else-if ##
+
+# In case the if-statement above it didn't work, we can use "elsif" to check and run our backup code
+# The "elsif" keyword is always after the first if-statement, or another "elsif" statement, and is optional
+
+if a > b
+    puts "a is bigger than b"
+elsif a < b
+    puts "a is smaller than b"
+elsif a == b
+    puts "a is b"
+end
+
+## Else ##
+
+# If our if- and else-if statements all fail, we can use an "else" to run our default code
+# The "else" keyword is always at the end of an if-statement and is optional
+
+if a > b
+    puts "a is bigger than b"
+elsif a < b
+    puts "a is smaller than b"
+elsif a == b
+    puts "a is b"
+else
+    puts "Game over"
+end
+
+### ACTIVITY: ###
+
+# 1 Make a variable called dice and assign it any positive number
+# 2 If dice is smaller than 5, print "Not quite"
+# 3 Else if dice is smaller than 10, print "Halfway there"
+# 4 Else if dice is smaller than 20, print "Almost there"
+# 5 Else if dice is greater than or equal to 20, print "You win"
+# 6 Else print "Help"
+
+dice = 11
+
+if dice < 5
+    puts "Not quite"
+elsif dice < 10
+    puts "Halfway there"
+elsif dice < 20
+    puts "Almost there"
+elsif dice >= 20
+    puts "You win"
+else
+    puts "Help"
+end
+
+# and/or in if-statements
+if (a == 2 && b == 5)
+    puts "a is 2 and b is 5"
+end
+
+if (a == 2 || b == 5)
+    puts "a is 2 or b is 5"
+end
+

@@ -1,107 +1,6 @@
 ### Class 1 ###
 print("\nClass 1\n")
 
-# Classes #
-
-# Python is what we call an Object-Oriented language. This means we get items like a Vehicle or a building, 
-# get their main properties (hair colour, height, weight), and objectify them
-
-# To make a class, we need the following:
-# 1) "class" keyword
-# 2) Class name (always start with a capital letter)
-
-class Vehicle:
-    brand = "Porche"
-    colour = "Blue"
-    has_bluetooth = True
-    num_of_wheels = 2
-    owner = "Lucas"
-
-# Classes can be reused like functions and assigned to variables
-# A new class can be made by writing the class name followed by round brackets
-# e.g. ClassName()
-
-v1 = Vehicle()
-print(v1)
-print(v1.colour)
-print(v1.has_bluetooth)
-print(v1.num_of_wheels)
-
-# However, every Vehicle is different. As such, when we make a class, we may want to "initialize" it
-# When we make a new Vehicle, we can input certain properties to create (or initialize) the class
-
-class Vehicle2:
-    def __init__(self, b, c, bt, w, o):
-        self.brand = b
-        self.colour = c
-        self.has_bluetooth = bt
-        self.num_of_wheels = w
-        self.owner = o
-# "self" refers to the Vehicle2's template and how we can put things in that template to get unique Vehicle2's
-
-v2 = Vehicle2("Ferrari", "Aqua", False, 3, "Ruby")
-print(v2)
-print(v2.colour)
-print(v2.has_bluetooth)
-print(v2.num_of_wheels)
-
-# Notice how when we print v1 or v2 by itself, we get a weird message declaring the class name and a bunch of letters and numbers
-# That is the class representation as a string
-# Obviously, it doesn't look readable but using the __str__() function, we can format it better
-
-class Vehicle3:
-    def __init__(self, b, c, bt, w, o):
-        self.brand = b
-        self.colour = c
-        self.has_bluetooth = bt
-        self.num_of_wheels = w
-        self.owner = o
-
-    def __str__(self):
-        return (self.owner + " owns a " + self.colour + " " + self.brand + " with " + str(self.num_of_wheels) + " wheels")
-
-v3 = Vehicle3("Honda", "Yellow", False, 5, "Joe")
-print(v3)
-
-# To delete a class, write "del"
-del v3
-# print(v3) gives an error
-
-# If we want to make a class with nothing in it, we can use "pass"
-
-class Vehicle4:
-    pass
-
-### ACTIVITY: ###
-
-# Build a new class based on your fictional city:
-# 1) Name your class MyCity. This class will have both the __init__() and __str__() functions
-# 2) You should have the following variables: city_name, population, gdp, has_costco
-    # 2.1) city_name is a string
-    # 2.2) population and gdp are numbers
-    # 2.3) has_costco is a boolean
-# 3) In the __str__() function, it should print: [city name] has [population] people with a GDP of [gdp]. Also, Costco is [has costco]
-    # 3.1) REMEMBER TO CONVERT INTS TO STRINGS by doing str(345) => "345"
-# 4) Make a new object of this newly built class with whatever values you want and print it out
-
-class MyCity:
-    def __init__(self, c, p, g, hc):
-        self.city_name = c
-        self.population = p
-        self.gdp = g
-        self.has_costco = hc
-    
-    def __str__(self):
-        return (self.city_name + " has " + str(self.population) + " people with a GDP of " + str(self.gdp) + ". Also, Costco is " + str(self.has_costco))
-
-print(MyCity("Funky Town", 100, 6, True))
-print(MyCity("Atlantis", 8, 435, False))
-
-
-
-### Class 2 ###
-print("\nClass 2\n")
-
 # Inheritance #
 # It is when one class is a part of, or depends on, another class
 
@@ -173,7 +72,8 @@ print(store1.check_if_open())
 
 
 
-### Class 3 ###
+### Class 2 ###
+print("\nClass 2\n")
 
 # Exception Handling #
 
@@ -267,9 +167,9 @@ print(pi) # 3.1415
 
 
 
-### Class 4 ###
+### Class 3 ###
 
-print("\nClass 4\n")
+print("\nClass 3\n")
 
 # Modules #
 print("\nModules")
@@ -359,7 +259,8 @@ print(valid_email(".com")) # False
 
 
 
-### Class 5 ###
+### Class 4 ###
+print("\nClass 4\n")
 
 # JavaScript Object Notation (JSON) #
 
