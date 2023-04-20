@@ -17,7 +17,7 @@ If you're interested in continuing coding as a career, hobby, or anything else, 
 
 ### Your Goal
 
-Complete every level in the *Main* section's ***Introduction Sequence*** and ***Ramping Up***, and every single level in the *Remote* section from the "Learn Git Branching" website. **Read the instructions of each level carefully because every level teaches something new!**
+In the **Learn Git Branching** link, complete every level in the *Main* section's ***Introduction Sequence*** and ***Ramping Up***, and every single level in the *Remote* section from the "Learn Git Branching" website. **Read the instructions of each level carefully because every level teaches something new!**
 
 ## EA 2: Trying Out Some HTML and CSS
 

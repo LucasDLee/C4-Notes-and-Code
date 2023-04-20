@@ -52,6 +52,16 @@ print(c2)
 # 5) Finally, make a function called check_if_open(self) in MyStore that returns is_open
     # 5.1) Write print([class of MyStore].check_if_open()) to see your output
 
+class MyCity:
+    def __init__(self, c, p, g, hc):
+        self.city_name = c
+        self.population = p
+        self.gdp = g
+        self.has_costco = hc
+
+    def __str__(self):
+        return (self.city_name + " has " + str(self.population) + " people with a GDP of " + str(self.gdp) + ". Also, Costco is " + str(self.has_costco))
+
 class MyStore(MyCity):
     def __init__(self, c, p, g, hc, sN, dE, iO):
         super().__init__(c, p, g, hc)
@@ -100,7 +110,7 @@ print(divide(1, 2)) # 0.5
 ### ACTIVITY ###
 # Make a function that tries to subtract 2 numbers
 # 1) The function's name will be called "subtract" with 2 arguments of x and y
-#   1.1) If everything is all good, return the product of x and y
+#   1.1) If everything is all good, return the difference of x and y
 # 2) Use an exception that catches a TypeError if you don't input a number
 #   2.1) If you catch this exception, return "You must subtract 2 numbers"
 
@@ -165,12 +175,6 @@ print(radius_of_a_circle(10)) # 1.5915...
 print(radius_of_a_circle(pi)) # 0.5
 print(pi) # 3.1415
 
-
-
-### Class 3 ###
-
-print("\nClass 3\n")
-
 # Modules #
 print("\nModules")
 # When we're writing code, we don't want it all to be in one file as that can get quite lengthy so we can break it up into "modules"
@@ -185,17 +189,41 @@ m1.one_piece()
 print(m1.my_games["game1"])
 print(m1.computer)
 
+
+
+
+### Class 3 ###
+print("\nClass 3\n")
+
 # Regular Expressions (RegEx) #
 print("\nRegEx")
 # When we want a user to input a specific set of words or numbers, we want to account for all scenarios and we can use RegEx to create a specific string format for that.
-# RegEx Definitions: https://www.w3schools.com/python/python_regex.asp
+
 # RegEx Checker: https://regex101.com/
+# RegEx Flags: https://pynative.com/python-regex-flags/
+# RegEx Library: https://docs.python.org/3/library/re.html
+# RegEx Syntax (pattern formatting): https://docs.python.org/3/library/re.html#regular-expression-syntax
 
 import re # import RegEx
 name = "Lucas"
 
 # []: Set of characters/numbers
+all_lowercase_letters = re.findall("[a-z]", name)
+# findall(your RegEx pattern, your string, flags=0): Finds all instances of your string's pattern
+print(all_lowercase_letters) # returns a LIST
+
+sin = "123456789"
+all_numbers = re.findall("[0-9]", sin)
+print(all_numbers)
+
+# {}: Exactly that number of occurences
+my_pattern = re.compile(r"\w{3}") # builds a RegEx pattern that looks for words with 3 exactly letters
+# compile(your RegEx pattern, flags=0) # Builds your RegEx pattern
+res = my_pattern.findall("Abe has a long sword and short bow")
+print(res)
+
 single_letter_search = re.search("a", name) # can also do "[a]"
+# search(RegEx pattern you're looking for, your string, flags=0): Returns the first item it finds
 print(single_letter_search)
 
 lowercase_search = re.search("[a-z]", name)
@@ -207,13 +235,6 @@ name = "Lucas Lee"
 search_everything = re.search("[a-zA-z]+", name)
 print(search_everything)
 
-all_lowercase_letters = re.findall("[a-z]", name)
-print(all_lowercase_letters) # returns a LIST
-
-sin = "123456789"
-all_numbers = re.findall("[0-9]", sin)
-print(all_numbers)
-
 # *: Zero or more occurences
 # +: One or more occurences
 c4 = "City Centre Community Centre"
@@ -222,21 +243,19 @@ print(zero_search)
 one_search = re.search("[a-z]+", c4)
 print(one_search)
 
-# {}: Exactly that number of occurences
 debit_card = "1234567890123456" # 16 digits
 print(re.findall("[0-9]", debit_card)) # prints each individual number
 print(re.findall("[0-9]{16}", debit_card)) # prints the entire debit card together
 
 ### ACTIVITY ###
 # 1) Make a function called valid_email(). This function takes 1 argument of user_email
-# 2) All emails follow a certain format:
-# - Some combination of letters & numbers followed by the @ symbol. After that is the website name with letters and numbers followed by the websites's domain name (.net, .com, .org, .ca, etc.) which consists of letters only
+# 2) All emails follow a certain format. Some combination of letters & numbers followed by the @ symbol. After that is the domain name (name of the website) with letters and numbers followed by the websites's top- level domain (.net, .com, .org, .ca, etc.) which consists of letters only:
 # - For example, c4@gmail1.com is valid
-# - For example, c4@gmail2.123com is not valid
+# - For example, c4@gmail2.123com is not valid (because the domain name has numbers in it)
 # 3) Using RegEx, check if user_email is valid by returning a boolean following the format in #2
 
 # Some notes:
-# - Use findall()
+# - I would recommend you use findall()
 # - You might get an IndexError so use exception handling to overcome that
 
 def valid_email(user_email):

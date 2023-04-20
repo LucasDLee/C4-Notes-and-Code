@@ -6,17 +6,17 @@ console.log("someplace" + " " + "in" + " " + "richmond");
 let num1 = 54;
 let num2 = 34;
 
-console.log(num1 + num2);
+console.log(num1 + num2); // 88
 
-console.log(num1 % num2);
+console.log(num1 % num2); // 20
 
-console.log(num1 / num2);
+console.log(num1 / num2); // 1.588235294117647
 
-console.log(num1 * num2);
+console.log(num1 * num2); // 1836
 
 num1 = 34
 
-console.log(num1 < num2);
+console.log(num1 < num2); // false
 
 // JS 2
 let dice = -1;

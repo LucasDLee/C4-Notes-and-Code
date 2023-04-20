@@ -183,6 +183,11 @@ my_school = {"Name" => "SFU", :pop => 30000, "Location": "Burnaby"}
 puts my_school
 
 
+
+
+### Class 3 ###
+puts "\nClass 3"
+
 # Symbols (Data Type) #
 ## Alternative keys in Ruby
 puts "\nSymbols"
@@ -197,10 +202,6 @@ puts my_electronics_store
 
 # The difference between Strings and Symbols is that Symbols take up less memory space and have better performance. We won't worry about this though
 
-
-
-### Class 3 ###
-puts "\nClass 3"
 
 # If-statements #
 puts "\nIf-statements"
@@ -243,6 +244,15 @@ else
     puts "Game over"
 end
 
+# and/or in if-statements
+if (a == 2 && b == 5)
+    puts "a is 2 and b is 5"
+end
+
+if (a == 2 || b == 5)
+    puts "a is 2 or b is 5"
+end
+
 ### ACTIVITY: ###
 
 # 1 Make a variable called dice and assign it any positive number
@@ -266,12 +276,116 @@ else
     puts "Help"
 end
 
-# and/or in if-statements
-if (a == 2 && b == 5)
-    puts "a is 2 and b is 5"
+
+
+
+### Class 4 ###
+puts "\nClass 4"
+
+# Loops #
+
+# A loop is a coding mechanism that lets us do certain things 
+# with our code without having to retype it
+
+# There are 4 types of loops: for, while, do while, and until loops
+
+# while-loops
+# A while-loop runs "while" a condition is true
+# 1) A starting variable (usually a number)
+# 2) "while" keyword
+# 3) Ending condition
+# 4) Code within the while loop
+# 5) Some way to change our starting variable
+puts "\nWhile-Loops"
+i = 0
+while i < 10
+    puts i
+    i = i + 1 # increase the loop by 1 everytime it runs
 end
 
-if (a == 2 || b == 5)
-    puts "a is 2 or b is 5"
+# We can also have while-loops in another while-loop
+i = 0
+j = 0
+while i < 10
+    puts "Start new loop #" + i.to_s
+    while j < 10
+        puts j
+        j = j + 1
+    end
+    j = 0 # reset j
+    i = i + 1 # increase i by 1
 end
 
+# Stopping a while-loop midway
+i = 0
+while i < 5
+    puts i
+    if i == 2
+        break # stops the while-loop
+    end
+    i += 1
+end
+
+# for-loops
+# A for-loop runs through a sequence of items and can also act like a while loop
+# 1) A starting variable (like a list)
+# 2) "for" and "in" keywords
+# 3) Code within the loop
+puts "\nFor-Loops"
+cars = ["Ferrari", "Volvo", "Toyota", "Mercedes"]
+for x in cars
+    puts x
+end
+
+city = "Richmond"
+for j in city.chars
+    puts j
+end
+
+# See the first while-loop we made on
+# We can do the same thing with a for-loop by specifying a specific set of numbers to go through
+for k in 0...10 # ... means exclusive range, whereas .. means inclusive range
+    puts k
+end
+
+for k in -5..0
+    puts k
+end
+
+for k in (-5..5).step(2)
+    puts k
+end
+
+### ACTIVITY: ###
+
+# Using the "cars" list we made earlier, do the following:
+# Make a while-loop (not a for-loop) and print every item in the cars list
+# Some notes:
+# 1) cars.length() is the size of your list
+# 2) cars[0] is the beginning of your list
+cars = ["Ferrari", "Volvo", "Toyota", "Mercedes"]
+
+i = 0
+while i < cars.length()
+    puts cars[i]
+    i = i + 1
+end
+
+# do while loops
+puts "\ndo..while loops"
+i = 0
+loop do
+    puts cars[i]
+    if cars[i] == "Toyota"
+        break
+    end
+    i += 1
+end
+
+# until loops
+puts "\nuntil loops"
+x = 0
+until x == 6 do
+    puts x*x
+    x += 1
+end
