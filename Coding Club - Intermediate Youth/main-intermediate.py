@@ -219,8 +219,7 @@ print(all_numbers)
 # {}: Exactly that number of occurences
 my_pattern = re.compile(r"\w{3}") # builds a RegEx pattern that looks for words with 3 exactly letters
 # compile(your RegEx pattern, flags=0) # Builds your RegEx pattern
-res = my_pattern.findall("Abe has a long sword and short bow")
-print(res)
+print(my_pattern.findall("Abe has a long sword and short bow"))
 
 single_letter_search = re.search("a", name) # can also do "[a]"
 # search(RegEx pattern you're looking for, your string, flags=0): Returns the first item it finds
@@ -256,12 +255,10 @@ print(re.findall("[0-9]{16}", debit_card)) # prints the entire debit card togeth
 
 # Some notes:
 # - I would recommend you use findall()
-# - You might get an IndexError so use exception handling to overcome that
+# - You might get an IndexError so use exception handling to overcome that. Return false for that error
 
 def valid_email(user_email):
     try:
-        # is_valid = re.findall("\.[a-zA-Z]+", user_email)
-        # print(is_valid)
         is_valid = re.findall("[a-zA-Z0-9]+[@][a-zA-Z0-9]+[.][a-zA-Z]+", user_email)
         return is_valid[0] == user_email    
     except IndexError:
@@ -313,39 +310,73 @@ print(my_account["name"])
 # https://api.nasa.gov/
 
 # Nasa's Astronomy Picture of the Day (APOD)
-import requests # used for getting API requests
+import requests  # used for getting API requests
 import json
+
 response_API = requests.get('https://api.nasa.gov/planetary/apod?api_key=dJsaDmJOddJO9frfefQ4JagcAJSeXhuJGbe6SliB') # call the API
-data = response_API.text # change the API request into plain text
-parse_json = json.loads(data) # load the API into JSON
+data = response_API.text  # change the API request into plain text
+parse_json = json.loads(data)  # load the API into JSON
 print(parse_json)
 print(parse_json["explanation"])
 print(parse_json["url"])
 
-# Displaying an Image
-from matplotlib import pyplot
-from matplotlib import image
+# Graphical User Interfaces #
+from tkinter import *
+from PIL import Image, ImageTk
 
-img = image.imread("penguin.jpg") # finds the image's file
-pyplot.imshow(img) # load the image into the library
-pyplot.axis("off") # turn off x- and y-axis
-pyplot.show() # display image in output
+window = Tk()
+window.title(parse_json["title"])  # set a title to your GUI
+window.geometry("500x450")  # set your GUI size (width x height)
+apod_description = Text(window, wrap=WORD) # enable text wrapping
+apod_description.insert(INSERT, parse_json["explanation"]) # write whatever text you want into your GUI
+apod_description.pack()
 
-# Displaying an Image from a URL
+# Download the image to your workplace
+img_data = requests.get(parse_json["url"]).content
+with open("my-apod-image.jpg", 'wb') as handler:
+	handler.write(img_data)
 
-from skimage import io
-url = "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FRB_486265257EDR_F0481570FHAZ00323M_.JPG"
-url_img = io.imread(url) # loads the image from the URL
-pyplot.imshow(url_img) # prepares the image
-pyplot.axis("off") # turn off the x- and y-axis
-pyplot.text(0, 0, "NASA's Mars Rover") # "NASA's Mars Rover" is displayed at (0, 0)
-pyplot.text(0, 100, "Launched In: 2011-11-26") # "Launched In: 2011-11-26" is displayed at (0, 100)
-pyplot.show() # display image in output
+# Get your downloaded image
+get_downloaded_image = Image.open("my-apod-image.jpg")
+resize_image = get_downloaded_image.resize((500, 350))
+my_image = ImageTk.PhotoImage(resize_image)
+
+# Place and position our image into our GUI
+label1 = Label(image=my_image) # placing it
+label1.image = my_image # placing it
+label1.place(x=0, y=100) # positioning it
+
+window.mainloop()  # display everything in your GUI
 
 ### ACTIVITY ###
-# Using NASA's APOD API, display an image to the screen of the astronomy picture of the day with its explanation
+# Display any image to your GUI using NASA's Mars Rover Photos API
+# 1) Using the links provided to us (https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=DEMO_KEY), first identify which part of this JSON file would give us the image
+# 2) Once you've identified where images are located in the link, download that image into your workplace
+# 3) Display your downloaded image with a descriptive title by retrieving it from your workplace and placing it at x=0 and y=0
 
-apod_url = io.imread(parse_json["url"])
-pyplot.imshow(apod_url)
-pyplot.text(0, 0, parse_json["title"])
-pyplot.show()
+# Set up GUI
+window = Tk()
+window.geometry("500x450")  # set your GUI size (width x height)
+
+# Set up API => JSON data conversion
+get_mars_api = requests.get("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=DEMO_KEY") # get API
+mars_data = get_mars_api.text # sets JSON to plain text
+load_mars_api = json.loads(mars_data) # API => JSON
+# img_data = requests.get(load_mars_api['photos'][0][what would you put here to get your image?]).content
+
+# Step 2
+img_data = requests.get(load_mars_api['photos'][0]['img_src']).content
+with open("mars-image.jpg", 'wb') as handler:
+	handler.write(img_data)
+        
+# Step 3
+get_downloaded_image = Image.open("mars-image.jpg")
+resize_image = get_downloaded_image.resize((500, 450))
+my_image = ImageTk.PhotoImage(resize_image)
+
+label2 = Label(image=my_image) # placing it
+label2.image = my_image # placing it
+label2.place(x=0, y=0) # positioning it
+window.title("Mars Rover Rocks") # adding my title
+
+window.mainloop()  # display everything in your GUI

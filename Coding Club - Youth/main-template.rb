@@ -245,22 +245,22 @@ else
 end
 
 # and/or in if-statements
-if (a == 2 && b == 5)
+if (a == 2 and b == 5)
     puts "a is 2 and b is 5"
 end
 
-if (a == 2 || b == 5)
+if (a == 2 or b == 5)
     puts "a is 2 or b is 5"
 end
 
 ### ACTIVITY: ###
 
-# 1 Make a variable called dice and assign it any positive number
-# 2 If dice is smaller than 5, print "Not quite"
-# 3 Else if dice is smaller than 10, print "Halfway there"
-# 4 Else if dice is smaller than 20, print "Almost there"
-# 5 Else if dice is greater than or equal to 20, print "You win"
-# 6 Else print "Help"
+# 1. Make a variable called dice and assign it any positive number
+# 2. If dice is smaller than 5, print "Not quite"
+# 3. Else if dice is smaller than 10, print "Halfway there"
+# 4. Else if dice is smaller than 20, print "Almost there"
+# 5. Else if dice is greater than or equal to 20, print "You win"
+# 6. If all of the if- and else-if statements fail, print "Help"
 
 dice = 11
 
@@ -328,7 +328,7 @@ end
 
 # for-loops
 # A for-loop runs through a sequence of items and can also act like a while loop
-# 1) A starting variable (like a list)
+# 1) A starting variable (like an array)
 # 2) "for" and "in" keywords
 # 3) Code within the loop
 puts "\nFor-Loops"
@@ -358,11 +358,11 @@ end
 
 ### ACTIVITY: ###
 
-# Using the "cars" list we made earlier, do the following:
-# Make a while-loop (not a for-loop) and print every item in the cars list
+# Using the "cars" array we made earlier, do the following:
+# Make a while-loop (not a for-loop) and print every item in the cars array individually
 # Some notes:
-# 1) cars.length() is the size of your list
-# 2) cars[0] is the beginning of your list
+# 1) cars.length() is the size of your array
+# 2) cars[0] is the beginning of your array
 cars = ["Ferrari", "Volvo", "Toyota", "Mercedes"]
 
 i = 0
