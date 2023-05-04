@@ -4,7 +4,7 @@
 
 Here, we'll be trying out some conditional statements ourselves. Do the following:
 
-- Make a variable called ``dice`` and assign it a value of -1
+- Make a variable called ``dice`` and assign it any number you want
 - Create an if-statement that checks the following:
   - If ``dice`` is a multiple of both 2 and 5, print "You have rolled a multiple of 10"
   - Else if ``dice`` is even (dice % 2 == 0), print "This is an even number" to the console

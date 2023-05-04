@@ -16,12 +16,19 @@ Here, we need to make some starting variables and functions to build our functio
     # Finding Latitude and Longitude: https://www.findlatitudeandlongitude.com/
     # NASA APIs: https://api.nasa.gov/
 
+    import tkinter as tk
+    from PIL import Image, ImageTk
+    import io
+    import requests
     import re
-    from matplotlib import pyplot
-    from skimage import io
+
 
     def run_nasa_earth_api():
         # All of your code goes in this function
+
+        # Input Example
+        fav_colour = input("What is your favourite colour?")
+        print(fav_colour)
 
     # You may use this function to check if the date a user inputted matches our format or not
     def valid_date(date):
@@ -64,12 +71,20 @@ Once you've edited your URL, use ``io.imread(your URL)`` to load the image from 
 
 ## Step 5: Loading and Displaying the Image
 
-Now, display the image using pylot.
+Now, display the image using tkinter.
 
 Some notes:
-- ``pyplot.imshow(your loaded image using io.imread())`` prepares the image for pyplot
-- ``pyplot.axis("off")`` disables the x- and y-axis
-- ``pyplot.show()`` displays the image
+- You **DO NOT** need to convert your URL from your API into JSON because your URL will already go to an image
+
+```python
+    # You don't have to do something like this in this step
+    get_mars_api = requests.get("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=DEMO_KEY") # get API
+    mars_data = get_mars_api.text # sets JSON to plain text
+    load_mars_api = json.loads(mars_data) # API => JSON
+```
+
+- Your GUI size can be whatever you want
+- When finished, your image will probably be quite blurry. That is ok
 
 ## Step 6: Editing Your Code
 

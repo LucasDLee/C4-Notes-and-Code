@@ -371,6 +371,11 @@ while i < cars.length()
     i = i + 1
 end
 
+
+
+### Class 5 ###
+puts "\nClass 5"
+
 # do while loops
 puts "\ndo..while loops"
 i = 0
@@ -389,3 +394,104 @@ until x == 6 do
     puts x*x
     x += 1
 end
+
+### ACTIVITY: ###
+# Make an until loop that starts at 1 and runs until you find a number divisible by 13 (y % 13)
+y = 1
+until y % 13 == 0 do
+    puts y
+    y += 1
+end
+
+# Functions #
+
+# A function is a piece of code that we predefine so we can use it as many times as we want
+# Math: y = mx + b, y = 4x
+
+# 3 things to make a function:
+# 1) "def" (define) keyword
+# 2) The function's name
+# 3) Round () brackets
+# e.g. def myFunction()
+puts "\nFunctions"
+def say_hi
+    puts "Hi!"
+end
+
+# To make the function work, we need to write the function name and brackets
+# This is called "calling a function"
+say_hi # Hi!
+say_hi # Hi!
+
+# Sometimes, we have a function that takes argument(s)
+
+def greeting(name)
+    puts "Hi " + name + "!"
+end
+# An argument is some information needed to be put into the function so that it works
+# greeting() # gives an error because it's expecting 1 argument
+greeting("Lucas") # Hi Lucas!
+greeting("Kasie") # Hi Kasie!
+
+# A function can take as many arguments as we want but for it to work,
+# it needs the same amount of items put into those arguments
+
+def add(x, y)
+    puts x + y
+end
+
+add(3, 5)
+add(7, 20)
+
+### ACTIVITY: ###
+
+# This activity involves "functions" and "loops"
+# Your goal is to make a function that will repeat a specific statement for as many times as you tell it to
+# 1) Make a function called "count_sheep". This function will take 1 argument called "number_of_sheep"
+# 2) In your "count_sheep" function, make a for-loop that will run depending on how many sheep you input in "number_of_sheep"
+#   2.1) e.g. if number_of_sheep is 3, your loop will run 3 times
+#   2.2) e.g. if number_of_sheep is 2342, your loop will run 2342 times
+# 3) In your for-loop, print to the console: "I have counted " + whatever your looping variable is.to_s + " sheep"
+#   3.1) e.g. if number_of_sheep is 3, you will see "I have counted 1 sheep", "I have counted 2 sheep", "I have counted 3 sheep"
+
+def count_sheep(number_of_sheep)
+    (0...number_of_sheep).each do |x|
+        puts "I have counted #{x + 1} sheep"
+    end
+end
+
+count_sheep(7)
+
+# When we make a function, sometimes it can "return" us the result
+# This is useful as we can get very complicated calculations and by having "return" in a function
+# allows us to do those calculations and associate them to some variable afterwards
+# instead of putting all of those calculations on that variable
+
+def divide(x, y)
+    return x.to_f / y.to_f
+end
+# to_f: Changes an integer to a decimal number
+
+# Notice how nothing is printed here
+# divide(3, 4) becomes 0.75
+puts divide(3, 4) # 0.75
+puts divide(5, 8) # 0.625
+
+get_divide_function_value = divide(5, 2) # 2.5
+puts get_divide_function_value
+
+### ACTIVITY ###
+
+# In this activity, you will checking if the Pythagorean theorem is true/false for a triangle depending on the length of the sides you give it
+# https://en.wikipedia.org/wiki/Pythagorean_theorem
+
+# Make a function called is_pythagorean with 3 arguments called x, y, and z
+# Return true if x^2 + y^2 equals to z^2 and false if it doesn't
+
+def is_pythagorean(x, y, z)
+    return (((x*x) + (y*y)) == (z*z))
+end
+
+puts is_pythagorean(3, 4, 5) # true
+puts is_pythagorean(1, 1, 2) # false
+

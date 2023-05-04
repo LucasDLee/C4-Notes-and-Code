@@ -2,9 +2,11 @@
 # NASA APIs: https://api.nasa.gov/
 
 # Step 1
+import tkinter as tk
+from PIL import Image, ImageTk
+import io
+import requests
 import re
-from matplotlib import pyplot
-from skimage import io
 
 def run_nasa_earth_api():
     # Step 2
@@ -39,10 +41,24 @@ def run_nasa_earth_api():
     url = "https://api.nasa.gov/planetary/earth/imagery?lon=" + str(lon) + "&lat=" + str(lat) + "&date=" + user_date + "&dim=" + str(dim) + "&api_key=" + api_key
 
     # Step 5
-    url_img = io.imread(url) # loads the image from the URL
-    pyplot.imshow(url_img) # prepares the image
-    pyplot.axis("off")
-    pyplot.show() # display image in output
+    window = tk.Tk()
+    window.geometry("500x450")  # set your GUI size (width x height)
+
+    # Download the image to your workplace
+    response = requests.get(url)
+    img_data = response.content
+
+    # Open your image from the data
+    load_img = Image.open(io.BytesIO(img_data))
+
+    # Add your uploaded image to Tkinter
+    gui_image = ImageTk.PhotoImage(load_img)
+
+    # Create a label with the image to put it into your GUI
+    add_image = tk.Label(window, image=gui_image)
+    add_image.pack()
+
+    window.mainloop()  # display everything in your GUI
 
 # You may use this function to check if the date a user inputted matches our format or not
 def valid_date(date):

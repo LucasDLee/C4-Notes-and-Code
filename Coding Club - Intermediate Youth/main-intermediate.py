@@ -298,7 +298,7 @@ load_json = json.loads(person) # converts person into a Python Dictionary
 print(load_json)
 
 # Opening JSON file
-open_my_account = open("Coding Club - Intermediate Youth\json-explanation.json")
+open_my_account = open("json-explanation.json")
 my_account = json.load(open_my_account)
 print(my_account)
 print(my_account["name"])
@@ -320,63 +320,90 @@ print(parse_json)
 print(parse_json["explanation"])
 print(parse_json["url"])
 
-# Graphical User Interfaces #
-from tkinter import *
-from PIL import Image, ImageTk
-
-window = Tk()
-window.title(parse_json["title"])  # set a title to your GUI
-window.geometry("500x450")  # set your GUI size (width x height)
-apod_description = Text(window, wrap=WORD) # enable text wrapping
-apod_description.insert(INSERT, parse_json["explanation"]) # write whatever text you want into your GUI
-apod_description.pack()
-
-# Download the image to your workplace
-img_data = requests.get(parse_json["url"]).content
-with open("my-apod-image.jpg", 'wb') as handler:
-	handler.write(img_data)
-
-# Get your downloaded image
-get_downloaded_image = Image.open("my-apod-image.jpg")
-resize_image = get_downloaded_image.resize((500, 350))
-my_image = ImageTk.PhotoImage(resize_image)
-
-# Place and position our image into our GUI
-label1 = Label(image=my_image) # placing it
-label1.image = my_image # placing it
-label1.place(x=0, y=100) # positioning it
-
-window.mainloop()  # display everything in your GUI
-
 ### ACTIVITY ###
 # Display any image to your GUI using NASA's Mars Rover Photos API
 # 1) Using the links provided to us (https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=DEMO_KEY), first identify which part of this JSON file would give us the image
-# 2) Once you've identified where images are located in the link, download that image into your workplace
-# 3) Display your downloaded image with a descriptive title by retrieving it from your workplace and placing it at x=0 and y=0
-
-# Set up GUI
-window = Tk()
-window.geometry("500x450")  # set your GUI size (width x height)
+# 2) Once you've identified where the image link is, print it to the console by doing the following:
+#   - Call the API using request
+#   - Change your request into plain text
+#   - Load your API into JSON format
+#   - Print it out. To get your image, you should follow this format: ['photos'][0][what would you put here to get your image?]
 
 # Set up API => JSON data conversion
 get_mars_api = requests.get("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=DEMO_KEY") # get API
 mars_data = get_mars_api.text # sets JSON to plain text
 load_mars_api = json.loads(mars_data) # API => JSON
+print(load_mars_api['photos'][0]['img_src'])
 # img_data = requests.get(load_mars_api['photos'][0][what would you put here to get your image?]).content
 
-# Step 2
-img_data = requests.get(load_mars_api['photos'][0]['img_src']).content
-with open("mars-image.jpg", 'wb') as handler:
-	handler.write(img_data)
-        
-# Step 3
-get_downloaded_image = Image.open("mars-image.jpg")
-resize_image = get_downloaded_image.resize((500, 450))
-my_image = ImageTk.PhotoImage(resize_image)
 
-label2 = Label(image=my_image) # placing it
-label2.image = my_image # placing it
-label2.place(x=0, y=0) # positioning it
-window.title("Mars Rover Rocks") # adding my title
+
+
+### Class 5 ### 
+print("\nClass 5\n")
+
+# Calling NASA's APOD API
+response_API = requests.get('https://api.nasa.gov/planetary/apod?api_key=dJsaDmJOddJO9frfefQ4JagcAJSeXhuJGbe6SliB') # call the API
+data = response_API.text  # change the API request into plain text
+apod_json = json.loads(data)  # load the API into JSON
+
+# Graphical User Interfaces #
+import tkinter as tk
+from PIL import Image, ImageTk
+import io
+
+window = tk.Tk()
+window.title(apod_json["title"])  # set a title to your GUI
+window.geometry("500x450")  # set your GUI size (width x height)
+
+# Download the image to your workplace
+response = requests.get(apod_json["url"])
+img_data = response.content
+
+# Open your image from the data
+load_img = Image.open(io.BytesIO(img_data))
+
+# Add your uploaded image to Tkinter
+gui_image = ImageTk.PhotoImage(load_img)
+
+# Create a label with the image to put it into your GUI
+add_image = tk.Label(window, image=gui_image)
+add_image.pack()
+
+# Create a label with some descriptive text
+add_description = tk.Label(window, text=apod_json["explanation"])
+add_description.pack()
 
 window.mainloop()  # display everything in your GUI
+
+
+### ACTIVITY ###
+# Display any image to your GUI using NASA's Mars Rover Photos API
+# Using the code you wrote for the previous activity, display your Mars Rover image to your GUI
+# Set up GUI
+window = tk.Tk()
+window.geometry("500x450")  # set your GUI size (width x height)
+
+# Mars Rover Image Code
+get_mars_api = requests.get("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=DEMO_KEY") # get API
+mars_data = get_mars_api.text # sets JSON to plain text
+load_mars_api = json.loads(mars_data) # API => JSON
+
+response = requests.get(load_mars_api["photos"][0]["img_src"])
+img_data = response.content
+
+# Create a Tkinter window
+root = tk.Tk()
+
+# Open the image from the image data
+img = Image.open(io.BytesIO(img_data))
+
+# Convert the image to a Tkinter PhotoImage
+photo = ImageTk.PhotoImage(img)
+
+# Create a label with the image
+label = tk.Label(root, image=photo)
+label.pack()
+
+# Run the Tkinter event loop
+root.mainloop()
