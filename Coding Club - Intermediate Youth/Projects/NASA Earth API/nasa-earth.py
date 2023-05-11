@@ -52,7 +52,8 @@ def run_nasa_earth_api():
     load_img = Image.open(io.BytesIO(img_data))
 
     # Add your uploaded image to Tkinter
-    gui_image = ImageTk.PhotoImage(load_img)
+    resize_image = load_img.resize((500, 450))
+    gui_image = ImageTk.PhotoImage(resize_image)
 
     # Create a label with the image to put it into your GUI
     add_image = tk.Label(window, image=gui_image)

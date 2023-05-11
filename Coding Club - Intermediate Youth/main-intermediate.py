@@ -378,8 +378,8 @@ window.mainloop()  # display everything in your GUI
 
 
 ### ACTIVITY ###
-# Display any image to your GUI using NASA's Mars Rover Photos API
 # Using the code you wrote for the previous activity, display your Mars Rover image to your GUI
+
 # Set up GUI
 window = tk.Tk()
 window.geometry("500x450")  # set your GUI size (width x height)

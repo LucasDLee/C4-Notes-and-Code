@@ -54,7 +54,7 @@ puts my_name
 # Snake Case is a type of variable naming style. All spaces are replaced with underlines and all words are in lowercase
 # e.g. super_string, snake_case
 
-### ACTIVITY: ###
+### ACTIVITY ###
 # 1) Make a variable called my_school and set the value to whatever school you go to
 # 2) Once you do that, puts the variable
 my_school = "SFU"
@@ -91,7 +91,7 @@ puts (true or false) # true
 puts (5 > 0 and 2 < 0) # false
 puts (5 > 0 or 2 < 0) # true
 
-### ACTIVITY: ###
+### ACTIVITY ###
 # 1. Make a variable called age and assign it your current age
 # 2. Use puts to check if your age is greater than 16 and greater than or equal to 19 and puts out your result
 
@@ -167,7 +167,7 @@ puts my_grocery_store # error
 print my_grocery_store.keys, "\n"
 print my_grocery_store.values, "\n"
 
-### ACTIVITY: ###
+### ACTIVITY ###
 
 # 1) Make a hash called my_school
 # 2) In your hash, have the keys of name, population, and location. This refers to your school name, how many people are in your school, and where your school is located respectively
@@ -253,7 +253,7 @@ if (a == 2 or b == 5)
     puts "a is 2 or b is 5"
 end
 
-### ACTIVITY: ###
+### ACTIVITY ###
 
 # 1. Make a variable called dice and assign it any positive number
 # 2. If dice is smaller than 5, print "Not quite"
@@ -356,7 +356,7 @@ for k in (-5..5).step(2)
     puts k
 end
 
-### ACTIVITY: ###
+### ACTIVITY ###
 
 # Using the "cars" array we made earlier, do the following:
 # Make a while-loop (not a for-loop) and print every item in the cars array individually
@@ -371,9 +371,6 @@ while i < cars.length()
     i = i + 1
 end
 
-
-
-### Class 5 ###
 puts "\nClass 5"
 
 # do while loops
@@ -395,13 +392,16 @@ until x == 6 do
     x += 1
 end
 
-### ACTIVITY: ###
+### ACTIVITY ###
 # Make an until loop that starts at 1 and runs until you find a number divisible by 13 (y % 13)
 y = 1
 until y % 13 == 0 do
     puts y
     y += 1
 end
+
+
+### Class 5 ###
 
 # Functions #
 
@@ -443,7 +443,7 @@ end
 add(3, 5)
 add(7, 20)
 
-### ACTIVITY: ###
+### ACTIVITY ###
 
 # This activity involves "functions" and "loops"
 # Your goal is to make a function that will repeat a specific statement for as many times as you tell it to
@@ -455,8 +455,8 @@ add(7, 20)
 #   3.1) e.g. if number_of_sheep is 3, you will see "I have counted 1 sheep", "I have counted 2 sheep", "I have counted 3 sheep"
 
 def count_sheep(number_of_sheep)
-    (0...number_of_sheep).each do |x|
-        puts "I have counted #{x + 1} sheep"
+    for x in 1..number_of_sheep
+        puts "I have counted #{x} sheep"
     end
 end
 
@@ -492,6 +492,192 @@ def is_pythagorean(x, y, z)
     return (((x*x) + (y*y)) == (z*z))
 end
 
-puts is_pythagorean(3, 4, 5) # true
-puts is_pythagorean(1, 1, 2) # false
+puts is_pythagorean(3, 4, 5) # true (because 3*3 + 4*4 == 5*5 results in 9 + 16 == 25 which is correct)
+puts is_pythagorean(1, 1, 2) # false (because 1*1 + 1*1 == 2*2 results in 1 + 1 == 4 which isn't correct)
 
+
+
+### Class 6 ###
+
+# Arbritrary Arugments in Functions #
+
+# Arbritrary argument (*my_argument): Used if you don't know how many arguments you want in your function
+
+def my_students(*students)
+    puts "I teach #{students[0]}, #{students[1]}, and #{students[2]}"
+end
+
+my_students("A", "B", "C")
+my_students("A", "B", "C", "D") # notice how "D" isn't used here
+# my_students("Abe", "Bob") # notice how we get an error because we expect 3 students to print out but only 2 are present
+
+### ACTIVITY: ###
+
+# In this activity, you'll be dealing with "arbritrary arguments" and "loops"
+# Make a function called print_all_people with 1 arbritrary argument called people
+# Using a loop, print every individual person in *people
+# Note: Arbritrary arguments are ARRAYS
+# e.g. *my_argument => my_argument = [a, b, c, d, ...]
+
+def print_all_people(*people)
+    for x in people
+        puts x
+    end
+end
+
+print_all_people("Haley", "Elaina", "Liwei", "Jimmy", "Ki Yi", "Kai", "Yubin", "Benson", "Stephen", "Toyota", "Bryan", "Daniel")
+
+# Lambda Functions #
+
+# An anonymous function (or a function with no name)
+# Used for small calculations
+# Format: lambda { |arguments| block }
+# e.g. lambda { |x| x + 5 }
+    # if x = 3, we return 8
+    # if x = -7, we return 2
+
+puts (lambda { |x| x + 5 }).call(3)
+
+# call() assigns some value to your anonymous function
+
+# You can assign Lambda Functions to variables
+multiply = lambda { |x, y| x * y }
+puts multiply.call(3, 5) # x = 3, y = 5, x * y => 15
+puts multiply.call(8, 6) # x = 8, y = 6, x * y => 48
+
+# Lambda Functions can also be in a regular function
+def subtract(x)
+    lambda { |y| x - y }
+end
+
+puts subtract(3).call(8) # x = 3, y = 8, x = y = -5
+puts subtract(12).call(-7) # x = 12, y = -7, x - y = 19
+
+### ACTIVITY ###
+
+# This activity will involve "lambda functions"
+# Your goal is to make a lambda function that has 1 argument called
+# my_name and print out the saying "Hi, [my_name]!"
+
+# TWO IMPORTANT NOTES:
+# - This lambda function we are making is the SAME THING as the first non-lambda function we made called greeting(name)
+# - Look at the `multiply = lambda { |x, y| x * y }` function to help you identify how a lambda function is formatted
+
+# Instructions
+# 1) Make a variable called new_greeting
+# 2) Have new_greeting be equal to a lambda function that takes 1 argument of my_name
+# 3) Print to the console: "Hi [my_name]!"
+
+new_greeting = lambda { |my_name| puts "Hi #{my_name}!" }
+new_greeting.call("Lucas") # Hi Lucas!
+new_greeting.call("Kasie") # Hi Kasie!
+
+
+
+### Class 7 ###
+puts "\nClass 7\n"
+
+# Classes #
+
+# Ruby is what we call an Object-Oriented language. This means we get items like a person or a building, 
+# get their main properties (hair colour, height, weight), and objectify them
+
+# To make a class, we need the following:
+# 1) "class" keyword
+# 2) Class name (always start with a capital letter)
+
+class Person
+    attr_accessor :eye_colour, :hair_colour, :height, :is_employed
+    def initialize
+        @eye_colour = "Brown"
+        @hair_colour = "Black"
+        @height = 180
+        @is_employed = true
+    end
+end
+
+# Classes can be reused like functions and assigned to variables
+# A new class can be made by writing the class name followed by round brackets
+# e.g. ClassName()
+
+p1 = Person.new
+puts p1
+puts p1.eye_colour
+puts p1.height
+puts p1.is_employed
+
+# However, every Person is different. As such, when we make a class, we may want to "initialize" it
+# When we make a new Person, we can input certain properties to create (or initialize) the class
+
+class Person2
+    attr_accessor :eye_colour, :hair_colour, :height, :is_employed
+    def initialize(eC, hC, h, isEmp)
+        @eye_colour = eC
+        @hair_colour = hC
+        @height = h
+        @is_employed = isEmp
+    end
+end
+
+# "self" refers to the Person2's template and how we can put things in that template to get unique Person2's
+
+p2 = Person2.new("Blue", "Blonde", 200, true)
+puts p2
+puts p2.eye_colour
+puts p2.height
+puts p2.is_employed
+
+
+# Notice how when we print p1 or p2 by itself, we get a weird message declaring the class name and a bunch of letters and numbers
+# That is the class representation as a string
+# Obviously, it doesn't look readable but using the to_s() function, we can format it better
+
+class Person3
+    attr_accessor :eye_colour, :hair_colour, :height, :is_employed
+    def initialize(eC, hC, h, isEmp)
+        @eye_colour = eC
+        @hair_colour = hC
+        @height = h
+        @is_employed = isEmp
+    end
+
+    def to_s
+        "Eye colour: #{@eye_colour}, hair colour: #{@hair_colour}, height: #{@height}"
+    end
+end
+
+p3 = Person3.new("Blue", "Blonde", 200, true)
+puts p3
+
+# To delete a class, write "undef"
+# undef p3
+# puts p3 gives an error
+
+# If we want to make a class with nothing in it, we can use "pass"
+
+class Person4
+end
+
+### ACTIVITY: ###
+
+# Build a new class based on your school:
+# 1) Name your class School. This class will have both the initialize and to_s functions
+# 2) Your class should have the variables of school_name as a string (word) and number_of_classrooms, teachers, and students are all numbers
+# 3) In the to_s function, it should say school_name + " has " + number_of_classrooms.to_s + " classrooms, " + teachers.to_s + " teachers, and " + students.to_s + " students"
+# 4) Make a new object of this newly built class with whatever values you want and print it out
+
+class School
+    def initialize(name, n_of_c, t, s)
+        @school_name = name
+        @number_of_classrooms = n_of_c
+        @teachers = t
+        @students = s
+    end
+
+    def to_s
+        "#{@school_name} has #{@number_of_classrooms} classrooms, #{@teachers} teachers, and #{@students} students"
+    end
+end
+
+puts School.new("McMath", 100, 6, 2343)
+puts School.new("Burnett", 8, 435, 1)

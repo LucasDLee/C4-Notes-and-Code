@@ -30,6 +30,12 @@ Here, we need to make some starting variables and functions to build our functio
         fav_colour = input("What is your favourite colour?")
         print(fav_colour)
 
+        # Step 5
+        # Use resize() to set your image size
+        
+        # Example
+        new_img = load_img.resize((width, height))
+
     # You may use this function to check if the date a user inputted matches our format or not
     def valid_date(date):
         is_valid = re.compile(r'^\d{4}-\d{2}-\d{2}$')
