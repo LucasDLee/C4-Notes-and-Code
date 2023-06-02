@@ -11,12 +11,14 @@ You should make a new Repl.it workplace for this final activity. Do not delete a
 ## Part 1: HTML
 
 1) Change the title of the website to "Colour Picker" (look in the ``head`` section)
-2) Do the following in the "body" HTML tag in order (and make sure its above ``<script src="script.js"></script>``):
-    1) Make a heading 1 with the words "Colour Picker"
-    2) Make a paragraph tag with the words "Choose a colour for the background!"
-    3) Use ``<input type="color" id="chooseColour">`` to get the colour wheel
-    4) Using the code provided in step iii, make a **button (not an input)** with **type of "submit"** with the **id of "submitColour"**
-    5) Make a paragraph tag with the copyright symbol (``&copy;``) and the words "[your name]'s Colour Picker"
+2) Do the following in the ``<body></body>`` HTML tag IN ORDER (and make sure its above ``<script src="script.js"></script>``):
+    1) Delete *Hello world*
+    2) Make a heading 1 with the words "Colour Picker"
+    3) Make a paragraph tag with the words "Choose a colour for the background!"
+    4) Use ``<input type="color" id="chooseColour">`` to get the colour wheel
+    5) Using the code provided in step iii, make a **button (not an input)** with **type of "submit"** with the **id of "submitColour"**
+    6) Make a paragraph tag with the copyright symbol (``&copy;``) and the words "[your name]'s Colour Picker"
+3) When you're done, it should look like the image in the description (except on the left side of your website)
 
 ## Part 2: JavaScript
 

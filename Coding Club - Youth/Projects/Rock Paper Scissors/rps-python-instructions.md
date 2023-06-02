@@ -51,7 +51,7 @@ Now that we have both ``player_symbol`` and ``computer_symbol``, we must check t
 1) An if-statement that checks if ``player_symbol`` is greater than ``computer_symbol``. If so, increment ``player_score`` by 1
 2) Else if ``computer_symbol`` is greater than ``player_symbol``, increment ``computer_score`` by 1
 3) Else, print to the console ``"It was a tie!``
-4) If you test it, you'll find that when ``computer_symbol`` is 0 (rock) and ``player_symbol`` is 2 (scissors), the ``player_score`` will increase instead of ``computer_score``. As per the rules of the game, ``computer_score`` should increase because rock beats scissors. Figure out a way to fix this
+4) If you test it, you'll find that when ``computer_symbol`` is 0 (rock) and ``player_symbol`` is 2 (scissors), the ``player_score`` will increase instead of ``computer_score``. As per the rules of the game, ``computer_score`` should increase because rock beats scissors. This is a **BUG**! .Figure out a way to fix this!
 
 ## Step 6: Printing the Changes
 

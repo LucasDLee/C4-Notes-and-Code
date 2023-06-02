@@ -261,7 +261,7 @@ changeHeading1BackgroundColour.style.backgroundColor = 'turquoise'
 
 // If we want to get all of a specific HTML element on a page, we can use querySelectorAll
 let changeAllParagraphs = document.querySelectorAll("p")
-// querySelectorAll() returns an array
+// querySelectorAll() returns a NodeList (similar to an array)
 console.log(changeAllParagraphs)
 changeAllParagraphs.forEach(function(individualParagraph) {
 	individualParagraph.style.borderStyle = 'solid'

@@ -73,8 +73,6 @@ Ask for the user's API key. Once given, edit the given URL to adapt it based on 
 
 For example, if the user's longitude is 123, change ***lon=-95.33*** to equal whatever the user's longitude is. In this case, it would change to ***lon=123***. The same thing applies to the URL's *lat*, *date*, *dim*, and *api_key*.
 
-Once you've edited your URL, use ``io.imread(your URL)`` to load the image from the URL.
-
 ## Step 5: Loading and Displaying the Image
 
 Now, display the image using tkinter.

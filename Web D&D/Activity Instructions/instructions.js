@@ -1,4 +1,4 @@
-//JS 1
+// JS 1
 console.log("apple");
 
 console.log("someplace" + " " + "in" + " " + "richmond");
@@ -101,3 +101,14 @@ function findTitle() {
 	let yourTitle = prompt("What is your title?")
 	getTitle.innerHTML = yourTitle
 }
+
+// JS 5
+let findChangeHyperlinksButton = document.getElementById("change-hyperlinks")
+findChangeHyperlinksButton.addEventListener("click", function() {
+	let getAllHyperlinks = document.querySelectorAll("a")
+	getAllHyperlinks.forEach(function(individualHyperlink) {
+		individualHyperlink.style.textDecoration = "none"
+		individualHyperlink.style.padding = "0.5em"
+		individualHyperlink.style.border = "5px solid orange"
+	})
+})

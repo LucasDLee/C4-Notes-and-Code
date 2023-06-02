@@ -498,6 +498,7 @@ puts is_pythagorean(1, 1, 2) # false (because 1*1 + 1*1 == 2*2 results in 1 + 1 
 
 
 ### Class 6 ###
+puts "\nClass 6"
 
 # Arbritrary Arugments in Functions #
 
@@ -619,8 +620,6 @@ class Person2
     end
 end
 
-# "self" refers to the Person2's template and how we can put things in that template to get unique Person2's
-
 p2 = Person2.new("Blue", "Blonde", 200, true)
 puts p2
 puts p2.eye_colour
@@ -663,6 +662,7 @@ end
 # Build a new class based on your school:
 # 1) Name your class School. This class will have both the initialize and to_s functions
 # 2) Your class should have the variables of school_name as a string (word) and number_of_classrooms, teachers, and students are all numbers
+#   2.1) This part goes in the initialize function
 # 3) In the to_s function, it should say school_name + " has " + number_of_classrooms.to_s + " classrooms, " + teachers.to_s + " teachers, and " + students.to_s + " students"
 # 4) Make a new object of this newly built class with whatever values you want and print it out
 
@@ -679,5 +679,5 @@ class School
     end
 end
 
-puts School.new("McMath", 100, 6, 2343)
-puts School.new("Burnett", 8, 435, 1)
+puts School.new("McMath", 100, 6, 2343) # McMath has 100 classrooms, 6 teachers, and 2343 students
+puts School.new("Burnett", 8, 435, 1) # Burnett has 8 classrooms, 435 teachers, and 1 students
