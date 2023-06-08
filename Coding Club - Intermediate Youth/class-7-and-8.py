@@ -90,12 +90,12 @@ print(fibonacci_recursive(0))
 # 3) When count_down() hits 0, print to the console: "Something happened!"
 
 def count_down(start_time):
-    if(start_time < 1):
+    if(start_time < 1): # tells us to stop running our function
         print("Something happened!")
         return 0
     print("T minus " + str(start_time) + " seconds until something happens")
 
-    count_down(start_time - 1)
+    count_down(start_time - 1) # recursive call
 
 count_down(5)
 # T minus 5 seconds until something happens

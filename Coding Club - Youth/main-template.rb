@@ -660,13 +660,16 @@ end
 ### ACTIVITY: ###
 
 # Build a new class based on your school:
-# 1) Name your class School. This class will have both the initialize and to_s functions
-# 2) Your class should have the variables of school_name as a string (word) and number_of_classrooms, teachers, and students are all numbers
-#   2.1) This part goes in the initialize function
+
+# Refer to Person3 to help you with this activity
+
+# 1) Name your class/object School. This class will have both the initialize and to_s functions
+# 2) Make the initialize() function with the variables of school_name as a string and number_of_classrooms, teachers, and students all being numbers
 # 3) In the to_s function, it should say school_name + " has " + number_of_classrooms.to_s + " classrooms, " + teachers.to_s + " teachers, and " + students.to_s + " students"
 # 4) Make a new object of this newly built class with whatever values you want and print it out
 
 class School
+    attr_accessor :school_name, :number_of_classrooms, :teachers, :students
     def initialize(name, n_of_c, t, s)
         @school_name = name
         @number_of_classrooms = n_of_c
