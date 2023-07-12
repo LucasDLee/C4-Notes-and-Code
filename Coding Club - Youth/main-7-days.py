@@ -48,7 +48,7 @@ print(my_name)
 # Snake Case is a type of variable naming style. All spaces are replaced with underlines and all words are in lowercase
 # e.g. super_string, snake_case
 
-### ACTIVITY: ###
+### ACTIVITY ###
 # 1) Make a variable called school and set the value to whatever school you go to
 # 2) Once you do that, print the variable
 school = "SFU"
@@ -84,12 +84,18 @@ print(True or False)
 print(5 > 0 and 2 < 0)
 print(5 > 0 or 2 < 0)
 
-### ACTIVITY: ###
+### ACTIVITY ###
 # 1. Make a variable called age and assign it your current age
-# 2. Use print to check if your age is greater than 16 and greater than or equal to 19 and print out your result
+# 2. Use print to check if your age is greater than 16 AND greater than or equal to 19 and print out your result (you should get false in your output)
 
 age = 21
 print(age > 16 and age >= 19)
+
+
+
+### Class 2 ###
+print("\nClass 2\n")
+
 
 # Lists #
 
@@ -102,75 +108,23 @@ print(colours[0]) # getting the 1st item of my list
 print(colours[-1]) # getting the last item of my list
 colours[0] = "orange"
 print(colours)
+colours.append("yellow") # adds item to the list
+print(colours)
 
 # Combining two lists
 years = [2000, 2001, 2002]
 years_and_colours = years + colours
 print(years_and_colours)
 
+### ACTIVITY ###
 
-
-
-### Class 2 ###
-print("\nClass 2\n")
-
-# Dictionaries #
-
-# A dictionary in Python holds what we call "key: value" pairs
-# This means we have a key, a topic or category, like colour, age, weight, height, etc.
-# Values are properties of a key: blue, 20, 50, 175
-print("\nDictionaries")
-person = {
-    "name": "Lucas",
-    "age": 20,
-    "isAlive": True
-}
-
-print(person) # print the entire dictionary of person
-
-print(person["name"]) # print an aspect of a person
-print(person.get("name")) # does the same thing
-
-print(person.keys()) # gets all the keys
-print(person.values()) # gets all the values
-
-# Updating our values
-
-person["name"] = "Lee" # change a value
-# e.g. dictionary["key"] = "new value"
-print(person)
-
-person.update({"name": "Lucas"}) # can change a value in our dictionary
-print(person)
-
-# Adding a new key: value pair
-
-person.update({"height": 175})
-print(person)
-
-# Removing a key
-
-person.pop("height")
-print(person)
-
-### ACTIVITY: ###
-
-# 1) Make a dictionary called school
-# 2) Have the keys of name, population, and location
-# 3) Name and location be strings and population is a number
-# 4) You can make up your values
-# 5) Print all of your keys and values separately
-# 6) Update your school's name to something else and then print the school name only
-
-school = {
-    "name": "UBC",
-    "population": 60000,
-    "location": "vancouver"
-}
-print(school.keys())
-print(school.values())
-school["name"] = "SFU"
-print(school["name"])
+# 1) Make a list called my_hobbies consisting of at least 2 hobbies (e.g. gaming, exercise, community outreach, coding, etc.)
+# 2) Print out your list
+# 3) Add another hobby to your list and then print it out again
+my_hobbies = ["cycling", "hiking"]
+print(my_hobbies)
+my_hobbies.append("video games")
+print(my_hobbies)
 
 # If-statements #
 print("\nIf-statements")
@@ -212,7 +166,7 @@ elif a == b:
 else:
     print("Game over")
 
-### ACTIVITY: ###
+### ACTIVITY ###
 
 # 1) Make a variable called dice and assign it any positive number
 # 2) If dice is smaller than 5, print "Not quite"
@@ -321,7 +275,7 @@ for k in range(-5, 5, 2): # can set a starting (-5) and ending (5) parameter in 
 else:
     print("Loop done")
 
-### ACTIVITY: ###
+### ACTIVITY ###
 
 # Using the "cars" list we made earlier, do the following:
 # Make a while-loop (not a for-loop) and print every item in the cars list
@@ -377,10 +331,11 @@ def add(x, y):
 add(3, 5)
 add(7, 20)
 
-### ACTIVITY: ###
+### ACTIVITY ###
 
 # This activity involves "functions" and "loops"
 # Your goal is to make a function that will repeat a specific statement for as many times as you tell it to
+
 # 1) Make a function called "count_sheep". This function will take 1 argument called "number_of_sheep"
 # 2) In your "count_sheep" function, make a for-loop that will run depending on how many sheep you input in "number_of_sheep"
 #   2.1) Use "range()" for your ending condition
@@ -392,8 +347,8 @@ add(7, 20)
 #   3.1) e.g. if number_of_sheep is 3, you will see "I have counted 1 sheep", "I have counted 2 sheep", "I have counted 3 sheep"
 
 def count_sheep(number_of_sheep):
-    for x in range(number_of_sheep):
-        print("I have counted " + str(x + 1) + " sheep")
+    for x in range(1, number_of_sheep+1):
+        print("I have counted " + str(x) + " sheep")
 
 count_sheep(7)
 # When we make a function, sometimes it can "return" us the result
@@ -416,178 +371,16 @@ print(get_divide_function_value)
 
 # In this activity, you will checking if the Pythagorean theorem is true/false for a triangle depending on the length of the sides you give it
 # https://en.wikipedia.org/wiki/Pythagorean_theorem
+# https://www.infoplease.com/math-science/mathematics/numbers-formulas/powers-and-exponents
 
-# Make a function called is_pythagorean with 3 arguments called x, y, and z
-# Return true if x^2 + y^2 equals to z^2 and false if it doesn't
+# Steps:
+# 1) Make a function called is_pythagorean with 3 arguments called x, y, and z
+# 2) Return true if it satisfies the "Symbolic Statement" from the Wikipedia link and False if it doesn't
 
 def is_pythagorean(x, y, z):
-    return (((x*x) + (y*y)) == (z*z))
+    return (
+        (x*x) + (y*y) == (z*z)
+    )
 
-print(is_pythagorean(3, 4, 5)) # true
-print(is_pythagorean(1, 1, 2)) # false
-
-
-
-
-### Class 5 ###
-print("\nClass 5\n")
-
-# Arbritrary Arugments in Functions #
-
-# Arbritrary argument (*my_argument): Used if you don't know how many arguments you want in your function
-
-def my_students(*students):
-    print("I teach " + students[0] + ", " + students[1] + ", and " + students[2])
-
-my_students("Abe", "Bob", "Carrey")
-my_students("Abe", "Bob", "Carrey", "Deanna") # notice how "Deanna" isn't used here
-# my_students("Abe", "Bob") # notice how we get an error because we expect 3 students to print out but only 2 are present
-
-### ACTIVITY: ###
-
-# In this activity, you'll be dealing with "arbritrary arguments" and "loops"
-# Make a function called print_all_people with 1 arbritrary argument called people
-# Using a loop, print every individual person in *people
-# Note: Arbritrary arguments are LISTS
-#       e.g. *my_argument => my_argument = [a, b, c, d, ...]
-
-def print_all_people(*people):
-    for x in people:
-        print(x)
-
-print_all_people("Rovan", "Mikko", "Rex", "Oceania", "Kaylie", "Itamar", "Amanda", "Andy", "Elaina", "Sarah", "William", "Haoxuan")
-
-# Lambda Functions #
-
-# An anonymous function (or a function with no name)
-# Used for small calculations
-# Format: lambda [arguments] : [return expression]
-# e.g. lambda x : x + 5
-    # if x = 3, we return 8
-    # if x = -7, we return 2
-print((lambda x : x + 5)(3))
-
-# def multiply(x, y):
-#     return x * y
-
-# You can attach Lambda Functions to variables
-multiply = lambda x, y : x * y
-print(multiply(3, 5)) # 15
-print(multiply(8, 6)) # 48
-
-# Lambda Functions can also be in a regular function
-def subtract(x):
-    return lambda y : x - y
-
-print(subtract(3)(8)) # 3 - 8 = -5, x = 3, y = 8
-print(subtract(12)(-7)) # 12 - -7 = 19, x = 12, y = -7
-
-### ACTIVITY ###
-
-# This activity will involve "lambda functions"
-# Your goal is to make a lambda function that has 1 argument called
-# my_name and print out the saying "Hi, [my_name]!"
-# 1) Make a variable called new_greeting
-# 2) Have new_greeting be equal to a lambda function that takes 1 argument of my_name
-# 3) Print to the console: "Hi, [my_name]!"
-
-new_greeting = lambda my_name : print("Hi,", my_name, "!")
-new_greeting("Lucas") # Hi, Lucas!
-new_greeting("Kasie") # Hi, Kasie!
-
-
-
-
-### Class 6 ###
-print("\nClass 6\n")
-
-# Classes #
-
-# Python is what we call an Object-Oriented language. This means we get items like a person or a building, 
-# get their main properties (hair colour, height, weight), and objectify them
-
-# To make a class, we need the following:
-# 1) "class" keyword
-# 2) Class name (always start with a capital letter)
-
-class Person:
-    eye_colour = "Brown"
-    hair_colour = "Black"
-    height = 180
-    is_employed = True
-
-# Classes can be reused like functions and assigned to variables
-# A new class can be made by writing the class name followed by round brackets
-# e.g. ClassName()
-
-p1 = Person()
-print(p1)
-print(p1.eye_colour)
-print(p1.height)
-print(p1.is_employed)
-
-# However, every Person is different. As such, when we make a class, we may want to "initialize" it
-# When we make a new Person, we can input certain properties to create (or initialize) the class
-
-class Person2:
-    def __init__(self, eC, hC, h, isEmp):
-        self.eye_colour = eC
-        self.hair_colour = hC
-        self.height = h
-        self.is_employed = isEmp
-# "self" refers to the Person2's template and how we can put things in that template to get unique Person2's
-
-p2 = Person2("Blue", "Blonde", 200, True)
-print(p2)
-print(p2.eye_colour)
-print(p2.height)
-print(p2.is_employed)
-
-
-# Notice how when we print p1 or p2 by itself, we get a weird message declaring the class name and a bunch of letters and numbers
-# That is the class representation as a string
-# Obviously, it doesn't look readable but using the __str__() function, we can format it better
-
-class Person3:
-    def __init__(self, eC, hC, h, isEmp):
-        self.eye_colour = eC
-        self.hair_colour = hC
-        self.height = h
-        self.is_employed = isEmp
-
-    def __str__(self):
-        return ("Eye colour: " + self.eye_colour + ", hair colour: " + self.hair_colour + ", height: " + str(self.height))
-
-p3 = Person3("Blue", "Blonde", 200, True)
-print(p3)
-
-# To delete a class, write "del"
-del p3
-# print(p3) gives an error
-
-# If we want to make a class with nothing in it, we can use "pass"
-
-class Person4:
-    pass
-
-### ACTIVITY: ###
-
-# Build a new class based on your school:
-# 1) Name your class School. This class will have both the __init__() and __str__() functions
-# 2) Your class should have the variables of schoolName as a string (word) and numberOfClassrooms, teachers, and students are all numbers
-# 3) In the __str__() function, it should say schoolName + " has " + numberOfClassrooms + " classrooms, " + teachers + " teachers, and " + students + " students"
-    # 3.1) REMEMBER TO CONVERT INTS TO STRINGS by doing str(345) => "345"
-# 4) Make a new object of this newly built class with whatever values you want and print it out
-
-class School:
-    def __init__(self, name, nOfC, t, s):
-        self.schoolName = name
-        self.numberOfClassrooms = nOfC
-        self.teachers = t
-        self.students = s
-    
-    def __str__(self):
-        return (self.schoolName + " has " + str(self.numberOfClassrooms) + " classrooms, " + str(self.teachers) + " teachers, and " + str(self.students) + " students")
-
-print(School("McMath", 100, 6, 2343))
-print(School("Burnett", 8, 435, 1))
+print(is_pythagorean(3, 4, 5)) # True
+print(is_pythagorean(1, 1, 2)) # False

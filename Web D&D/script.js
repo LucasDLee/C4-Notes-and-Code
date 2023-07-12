@@ -174,6 +174,7 @@ function printLocation() {
 	console.log("City Centre Community Centre")
 }
 printLocation()
+printLocation()
 
 function multiply(x, y) {
 	return x * y

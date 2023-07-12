@@ -13,7 +13,7 @@
 
 p {
 	background-color: red;
-    color: green;
+    color: green; /* text colour */
 	text-align: center;
 }
 
@@ -30,6 +30,7 @@ ul {
 }
 
 ul li {
+    color: blue;
 	font-weight: bold;
 }
 
@@ -46,13 +47,13 @@ img {
 }
 
 /* 
-Apply the following stylings to the ordered list tag:
+Apply the following stylings to the ordered list (ol) tag:
 
     - A list-style-type of circle
     - Border width of 1px
     - Border style of dashed 
 
-Apply the following stylings to list items in the ordered list:
+Apply the following stylings to list items (li) in the ordered list (ol):
     - Text colour of orange
 */
 /* ol {
