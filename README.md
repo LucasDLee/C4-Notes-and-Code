@@ -4,9 +4,9 @@ My notes and code for my job at City Centre Community Centre can be found here.
 
 Started in January 2022.
 
-## C4 Coding Club: Youth
+## Coding Club: Youth
 
-All of the code provided is found in *main-template.py* with both code notes and activites.
+Everything is found in *Coding Club - Youth* folder with both code notes and activites.
 
 Youth will be introduced to programming concepts such as what data types are and how to use them, become familiar with if-statements, loops, and functions, and be introduced to object-oriented programming.
 
@@ -16,11 +16,12 @@ This folder contains the final activites/projects for the youth group.
 
 - Number Guesser (easy)
 - Rock Paper Scissors (medium)
+- Sorting Algorithms (hard)
 - Tic Tac Toe (in progress)
 
-## C4 Coding Club: Youth Intermediate
+## Coding Club: Youth Intermediate
 
-All of the code provided is found in *main-intermediate.py* with both code notes and activiites. *module1.py* and *json-explanation.json* are used to introduce Python modules and JSON respectively.
+Everything is found in *Coding Club - Intermediate Youth* folder with both code notes and activiites. *module1.py* and *json-explanation.json* are used to introduce Python modules and JSON respectively.
 
 Youth will build on their pre-existing programming knowledge by expanding on OOP concepts, be introduced to exception handling, modules, scopes, and RegEx, and learn and use APIs.
 

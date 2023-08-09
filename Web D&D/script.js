@@ -1,4 +1,5 @@
 // Class 3
+console.log("\nClass 3")
 
 // VARIABLES
 
@@ -74,6 +75,7 @@ console.log(5 > 0 || 2 < 0);
 
 
 // Class 4
+console.log("\nClass 4")
 
 // If-statements
 // 3 parts of an if-statement:
@@ -152,6 +154,7 @@ do {
 
 
 // Class 5
+console.log("\nClass 5")
 
 // Functions
 // A function is a piece of our code we can reuse that'll do a certain thing such as using loops or printing our name to the console
@@ -199,6 +202,7 @@ console.log(Math.random()) //0 <= Math.random() < 1
 
 
 // Class 6
+console.log("\nClass 6")
 
 // Document Object Model
 // A way to connect our HTML file (website) to our JavaScript

@@ -168,7 +168,7 @@ else:
 
 ### ACTIVITY ###
 
-# 1) Make a variable called dice and assign it any positive number
+# 1) Make a variable called dice and assign it to any positive number
 # 2) If dice is smaller than 5, print "Not quite"
 # 3) Else if dice is smaller than 10, print "Halfway there"
 # 4) Else if dice is smaller than 20, print "Almost there"
@@ -277,12 +277,11 @@ else:
 
 ### ACTIVITY ###
 
-# Using the "cars" list we made earlier, do the following:
-# Make a while-loop (not a for-loop) and print every item in the cars list
+# Using the "cars" list we made earlier, make a while-loop (not a for-loop) and print every item in the cars list
 # Some notes:
-# 1) len(cars) is the size of your list
-# 2) cars[0] is the beginning of your list
-cars = ["Ferrari", "Volvo", "Toyota", "Mercedes"]
+# - len(cars) is the size of your list
+# - cars[0] is the beginning of your list
+cars = ["Ferrari", "Volvo", "Toyota", "Mercedes"] # DON'T CHANGE THIS
 
 i = 0
 while i < len(cars):
@@ -338,19 +337,21 @@ add(7, 20)
 
 # 1) Make a function called "count_sheep". This function will take 1 argument called "number_of_sheep"
 # 2) In your "count_sheep" function, make a for-loop that will run depending on how many sheep you input in "number_of_sheep"
-#   2.1) Use "range()" for your ending condition
-        # 2.1.1) "range()" goes through a sequence of numbers
-        # 2.1.2) e.g. range(6) gives us 0, 1, 2, 3, 4, 5
-#   2.2) e.g. if number_of_sheep is 3, your loop will run 3 times
-#   2.3) e.g. if number_of_sheep is 2342, your loop will run 2342 times
+#   2.1) e.g. if number_of_sheep is 3, your loop will run 3 times
+#   2.2) e.g. if number_of_sheep is 2342, your loop will run 2342 times
 # 3) In your for-loop, print to the console: "I have counted " + str(whatever your looping variable is) + " sheep"
 #   3.1) e.g. if number_of_sheep is 3, you will see "I have counted 1 sheep", "I have counted 2 sheep", "I have counted 3 sheep"
+
+# Loop for your function
+# for x in range(1, number_of_sheep+1):
+#     # more code in the loop
 
 def count_sheep(number_of_sheep):
     for x in range(1, number_of_sheep+1):
         print("I have counted " + str(x) + " sheep")
 
 count_sheep(7)
+
 # When we make a function, sometimes it can "return" us the result
 # This is useful as we can get very complicated calculations and by having "return" in a function
 # allows us to do those calculations and associate them to some variable afterwards
