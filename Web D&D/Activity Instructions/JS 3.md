@@ -13,4 +13,4 @@ Using functions in JavaScript, do the following:
     1) Make a function called "pythagorean" with 3 parameters called ``x``, ``y``, and ``z``
     2) To calculate the sides of a right triangle, we use the [Pythagorean Theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem) which states x&#178; + y&#178; = z&#178;
     3) In our function, **return true** if x&#178; + y&#178; = z&#178; and **return false** if x&#178; + y&#178; &#8800; z&#178;. To get something like x&#178;, you can do **x * x**
-    4) Finally, write ``console.log(pythagorean(3, 4, 5))`` outside of your function. You should see it say ``true``
+    4) Finally, write ``console.log(pythagorean(3, 4, 5))`` outside of your function. You should see it say ``true``. ``console.log(pythagorean(1, 1, 2))`` should say ``false``.
