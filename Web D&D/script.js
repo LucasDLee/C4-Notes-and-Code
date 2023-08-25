@@ -254,7 +254,7 @@ for(let i = 0; i < cars.length; i++) {
 	console.log(cars[i])
 }
 
-// Query Selector
+// Query Selectors
 // If we want to get a certain HTML element or class, we can use query selector
 // Gets the FIRST HTML element it finds
 

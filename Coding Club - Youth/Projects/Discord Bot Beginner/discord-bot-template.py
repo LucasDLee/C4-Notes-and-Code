@@ -28,7 +28,7 @@ def pythagorean(x, y):
 ### ACTIVITY: ###
 
 # 1) Make a function called "add(x, y)". This function will return the sum of x + y
-# 2) Go back to step 6. In step 6, make an elif (else-if) statement that checks if you type `!calculate add x y`` to see the sum of your numbers. For example, `!calculate add 6 7` will give you 13.
+# 2) Go back to step 5. In step 5, make an elif (else-if) statement that checks if you type `!calculate add x y`` to see the sum of your numbers. For example, `!calculate add 6 7` will give you 13.
 # 3) Test it out on Discord!
 
 def add(x, y):
@@ -111,10 +111,10 @@ async def on_member_join(member):
 	return
 
 # Step 7: Responding in your Discord server
-@client.event
-async def set_response_channel(ctx):
-    channel_id = ctx.channel.id
-    await ctx.send(f"Response channel set to {ctx.channel.mention} (ID: {channel_id}).")
+# @client.event
+# async def set_response_channel(ctx):
+#     channel_id = ctx.channel.id
+#     await ctx.send(f"Response channel set to {ctx.channel.mention} (ID: {channel_id}).")
 
 
 client.run('')
