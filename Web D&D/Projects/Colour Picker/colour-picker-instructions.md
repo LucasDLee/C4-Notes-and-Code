@@ -16,7 +16,7 @@ You should make a new Repl.it workplace for this final activity. Do not delete a
     2) Make a heading 1 with the words "Colour Picker"
     3) Make a paragraph tag with the words "Choose a colour for the background!"
     4) Use ``<input type="color" id="chooseColour">`` to get the colour wheel
-    5) Using the code provided in step iii, make a **button (not an input)** with **type of "submit"** with the **id of "submitColour"**
+    5) Using the code provided in step iv, make a **button (not an input)** with **type of "submit"** with the **id of "submitColour"**
     6) Make a paragraph tag with the copyright symbol (``&copy;``) and the words "[your name]'s Colour Picker"
 3) When you're done, it should look like the image in the description (except on the left side of your website)
 

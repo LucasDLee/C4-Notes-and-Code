@@ -45,3 +45,29 @@ Here, we want to ask the user if they want to play again.
     1) If ``play_again`` is equal to ``'N'``, then set ``play_again`` to be ``False``
     2) Else, set ``play_again`` to be ``True``
 3) Finally, outside of our ``run_game()`` function, write ``run_game()`` to turn our game on
+
+## Optional Adaptation
+
+If you're finished steps 1 to 5, you can try to edit your code so that your game has a GUI instead of using the console. Here's the steps you need to accomplish that:
+
+## Step 6: Setting Up Your GUI
+
+Outside of your ``run_game()`` function, write the following:
+
+1) Write ``import tkinter`` (can also do ``import tkinter as tk`` if you prefer writing ``tk`` instead of ``tkinter``)
+2) Set up your GUI window by writing ``game = tk.Tk()`` and ``game.title("Number Guesser")``
+3) Make 2 labels that have the text *Guess a number between 0 and 10 inclusive!* and *What is your guess?*. Make another label with no text. This third label will be used to display your result.
+4) Make an entry for the user's input
+
+## Step 7: Editing Your Game
+
+Copy and paste the ``run_game()`` function and rename it as ``run_game2()``. Do the following inside of ``run_game2()``:
+
+1) Remove the ``play_again`` variable and anything that uses that variable (while-loop, if-statement, etc.)
+2) Set ``your_guess`` to equal the user's input. Make sure to convert it to a number using ``int()``. For example, you could do ``your_guess = int(user_input.get())``
+3) In the if-statement afterwards, edit it so that the winning/losing message is connected to your 3rd label that currently has no text inside of it
+
+## Step 8: Playing Your Game
+
+1) Make a button and connect it to your ``run_game2()`` function
+2) Write ``game.mainloop()``. Your game should be working now
