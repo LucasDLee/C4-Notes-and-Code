@@ -38,6 +38,8 @@ In this folder, we use the languages **HyperText Markup Langauge (HTML)**, **Cas
 
 Preteens and youth will be introduced to HTML, CSS, and JavaScript, how the 3 langauges intertwine, and learn to build websites using all 3 languages.
 
+See my [program outline](/Web%20D&D/program-outline.md) for more details.
+
 ### Activity Instructions
 
 This folder contains CSS and JS activites. In the *instructions.css* and *instructions.js* file are the answers to the CSS and JS activities.
