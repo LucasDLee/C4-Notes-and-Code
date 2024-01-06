@@ -1,0 +1,121 @@
+/* Get font family */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html {
+  font-family: 'Montserrat';
+}
+
+body {
+  margin: 0;
+}
+
+/* Set up navigation bar */
+nav {
+  background-color: thistle;
+  padding: 0.5em 1em;
+  gap: 2em;
+  display: flex;
+  flex-direction: row;
+}
+
+nav a {
+  color: cadetblue;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  font-style: italic;
+}
+
+/* Need to be aligned just like the navigation bar */
+header, main, footer {
+  padding: 1em 1em;
+}
+
+header, main {
+  background-color: aliceblue;
+}
+
+footer {
+  background-color: thistle;
+}
+
+/* Remove gaps between header, main, and footer */
+h1, p, h2 {
+  margin: 0;
+  padding: 16px 0;
+}
+
+ul {
+  margin: 0;
+}
+
+/* Make sections look nicer */
+main section {
+  background-color: antiquewhite;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 1px;
+  border-color: black;
+  padding: 1em 2em;
+  margin: 1em 0;
+}
+
+/* For image slider */
+.arrow {
+  border: solid black;
+  border-width: 0 10px 10px 0;
+  display: inline-block;
+  padding: 20px;
+}
+
+.arrow:hover {
+  cursor: pointer;
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+/* Setup footer */
+footer {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Change facts to be bubbles */
+button {
+  font-size: large;
+  margin-bottom: 1em;
+}
+
+#facts {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 0.5em;
+}
+
+#facts li {
+  background-color: darkseagreen;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 0.25em;
+}
+
+#facts li:nth-child(even) {
+  background-color: lightcoral;
+}
+
+/* Edit image selector */
+#image-slider {
+  align-items: center;
+  display: flex;
+}
